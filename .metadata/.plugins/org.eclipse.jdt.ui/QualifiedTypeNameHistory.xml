@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroProdutoFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.CadastraUsuarioListener"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroUsuarioFrame"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.controller.MainController"/>
+<fullyQualifiedTypeName name="java.awt.GridBagLayout"/>
+<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="java.awt.GridBagConstraints"/>
+</qualifiedTypeNameHistroy>
