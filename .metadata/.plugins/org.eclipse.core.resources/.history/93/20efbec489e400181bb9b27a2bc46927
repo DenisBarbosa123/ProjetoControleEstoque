@@ -1,0 +1,23 @@
+package br.edu.univas.pcelab4.view;
+
+import javax.swing.JFrame;
+
+import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
+
+public class CadastroUsuarioFrame extends JFrame{
+	CadastraUsuarioListener listener;
+	
+	public CadastroUsuarioFrame(){
+		this.setSize(600,600);
+		this.setName("Tela de Cadastro de Usuário");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		addComponents();
+	}
+
+	private void addComponents() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
