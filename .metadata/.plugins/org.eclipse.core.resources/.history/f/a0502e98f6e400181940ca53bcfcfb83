@@ -1,0 +1,44 @@
+package br.edu.univas.pcelab4.controller;
+
+import javax.swing.JOptionPane;
+
+import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
+import br.edu.univas.pcelab4.dao.UserDAO;
+import br.edu.univas.pcelab4.model.Usuario;
+import br.edu.univas.pcelab4.view.CadastroUsuarioFrame;
+
+public class AddUserController {
+	private UserDAO dao;
+	private Usuario usuario;
+	private CadastroUsuarioFrame frame;
+	
+	public AddUserController(){
+		dao = new UserDAO();
+		frame = new CadastroUsuarioFrame();
+		frame.setListener(new CadastraUsuarioListener() {
+			
+			@Override
+			public void salvarUsuario() {
+					cadastraUsuario();
+			
+			}
+
+			
+		});
+	}
+	
+	private void cadastraUsuario() {
+		usuario = new Usuario();
+		usuario.setCpf(frame.getCampoCpf().getText());
+		usuario.setNome(frame.getCampoNome().getText());
+		usuario.setEmail(frame.getCampoEmail().getText());
+		usuario.setTelefone(frame.getCampoTelefone().getText());
+		usuario.setUserName(frame.getCampoUser().getText());
+		usuario.setPassword(frame.getCampoSenha().getText());
+		
+		
+	}
+	
+	
+	
+}
