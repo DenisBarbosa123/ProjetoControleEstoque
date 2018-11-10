@@ -1,0 +1,25 @@
+package br.edu.univas.pcelab4.view;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class CadastroCargoFrame extends JFrame{
+	public CadastroCargoFrame(){
+		this.setTitle("Tela de Cadastro de Cargo");
+		this.setSize(300, 300);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		addComponents();
+	}
+
+	private void addComponents() {
+		this.setLayout(new FlowLayout());
+		JLabel cargoLabel = new JLabel();
+		cargoLabel.setText("Nome do cargo: ");
+		this.add(cargoLabel);
+		
+		
+	}
+}

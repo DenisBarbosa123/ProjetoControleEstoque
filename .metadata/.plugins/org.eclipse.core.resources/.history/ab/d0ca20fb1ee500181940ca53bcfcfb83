@@ -1,0 +1,9 @@
+package br.edu.univas.pcelab4.view;
+
+import javax.swing.JFrame;
+
+public class CadastroCargoFrame extends JFrame{
+	public CadastroCargoFrame(){
+		this.setTitle("Tela de Cadastro de Cargo");
+	}
+}

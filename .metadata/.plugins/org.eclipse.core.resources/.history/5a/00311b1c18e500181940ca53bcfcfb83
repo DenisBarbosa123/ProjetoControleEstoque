@@ -1,0 +1,27 @@
+package br.edu.univas.pcelab4.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+public class AdministradorFrame extends JFrame{
+	
+	exibirTelaCadastroUsuarioListener listener
+	
+	public AdministradorFrame(){
+		this.setSize(300, 300);
+		this.setTitle("Tela Principal Adminstrador");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		addComponents();
+		
+	}
+
+	private void addComponents() {
+		JLabel telaAdm = new JLabel();
+		telaAdm.setText("Tela Principal : Administrador");
+		
+		
+		
+	}
+}
