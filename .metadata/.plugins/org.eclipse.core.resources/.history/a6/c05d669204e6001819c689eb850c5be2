@@ -20,7 +20,7 @@ import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
 
 
 public class CadastroUsuarioFrame extends JFrame{
-	private CadastraUsuarioListener listener;
+	CadastraUsuarioListener listener;
 	
 	 JTextField campoCpf;
 	 JTextField campoNome;
@@ -213,7 +213,14 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+					if(listener==null){
+						System.out.println("B.O aqui");
+					}else{
+						System.out.println("CHEGUEI ATE AQUI");
 						listener.salvarUsuario();
+					}
+					
+					
 			}
 		});
 		gbc.gridx = 0;

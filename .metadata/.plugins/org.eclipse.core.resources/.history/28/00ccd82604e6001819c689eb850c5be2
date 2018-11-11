@@ -22,9 +22,9 @@ public class AddUserController {
 		dao = new UserDAO();
 		frame = new CadastroUsuarioFrame();
 		frame.setListener(new CadastraUsuarioListener() {
+			
 			@Override
 			public void salvarUsuario() {
-					System.out.println("passei aqui");
 					cadastraUsuario();
 			
 			}

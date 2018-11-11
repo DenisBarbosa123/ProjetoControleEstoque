@@ -213,7 +213,7 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-						listener.salvarUsuario();
+						this.lis
 			}
 		});
 		gbc.gridx = 0;

@@ -21,10 +21,11 @@ public class AddUserController {
 	public AddUserController() throws SQLException{
 		dao = new UserDAO();
 		frame = new CadastroUsuarioFrame();
+		System.out.println("passei aqui");
 		frame.setListener(new CadastraUsuarioListener() {
+			
 			@Override
 			public void salvarUsuario() {
-					System.out.println("passei aqui");
 					cadastraUsuario();
 			
 			}

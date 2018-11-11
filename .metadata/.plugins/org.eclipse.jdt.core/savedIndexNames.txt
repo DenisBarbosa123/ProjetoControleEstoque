@@ -2,14 +2,14 @@ INDEX VERSION 1.127+C:\Users\Denis Barbosa\Desktop\ProjetoEstoque\.metadata\.plu
 710797068.index
 806062888.index
 3292421854.index
-2569137926.index
+1801777234.index
 1423573172.index
 1093488887.index
 1204375214.index
 1177904427.index
-916900781.index
 823384711.index
-1801777234.index
+916900781.index
+2569137926.index
 1251709359.index
 2097595711.index
 3115905649.index

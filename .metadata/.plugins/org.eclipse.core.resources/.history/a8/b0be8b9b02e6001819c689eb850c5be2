@@ -18,9 +18,8 @@ import javax.swing.JTextField;
 
 import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
 
-
 public class CadastroUsuarioFrame extends JFrame{
-	private CadastraUsuarioListener listener;
+	CadastraUsuarioListener listener;
 	
 	 JTextField campoCpf;
 	 JTextField campoNome;
@@ -213,7 +212,9 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-						listener.salvarUsuario();
+				System.out.println("cheguei ate aqui");
+					listener.salvarUsuario();
+					
 			}
 		});
 		gbc.gridx = 0;
@@ -224,22 +225,22 @@ public class CadastroUsuarioFrame extends JFrame{
 		gbc.fill = GridBagConstraints.NONE;
 		this.add(botaoSalvarUsuario,gbc);
 		
-//		JButton botaoCancelar = new JButton();
-//		botaoCancelar.setText("Cancelar");
-//		botaoCancelar.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent arg0) {
-//				
-//			}
-//		});
-//		gbc.gridx = 0;
-//		gbc.gridy = 13;
-//		gbc.gridwidth = 2;
-//		gbc.anchor = GridBagConstraints.CENTER;
-//		gbc.weightx = 0.0;
-//		gbc.fill = GridBagConstraints.NONE;
-//		this.add(botaoCancelar,gbc);
+		JButton botaoCancelar = new JButton();
+		botaoCancelar.setText("Cancelar");
+		botaoCancelar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		gbc.gridx = 0;
+		gbc.gridy = 13;
+		gbc.gridwidth = 2;
+		gbc.anchor = GridBagConstraints.CENTER;
+		gbc.weightx = 0.0;
+		gbc.fill = GridBagConstraints.NONE;
+		this.add(botaoCancelar,gbc);
 		
 	
 	}
