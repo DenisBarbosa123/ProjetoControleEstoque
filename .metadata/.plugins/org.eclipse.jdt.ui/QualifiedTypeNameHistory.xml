@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroProdutoFrame"/>
-<fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="javax.swing.JLabel"/>
-<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.CadastraUsuarioListener"/>
-<fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroUsuarioFrame"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.controller.MainController"/>
 <fullyQualifiedTypeName name="java.awt.GridBagLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
-<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="javax.swing.JTable"/>
+<fullyQualifiedTypeName name="java.awt.Insets"/>
+<fullyQualifiedTypeName name="java.awt.Font"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.controller.AddUserController"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.dao.UserDAO"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroUsuarioFrame"/>
 <fullyQualifiedTypeName name="java.awt.GridBagConstraints"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.model.Usuario"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.model.Endereco"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.exibirTelaCadastroUsuario"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.AdministradorFrame"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.CadastraUsuarioListener"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.exibirTelaCadastroUsuarioListener"/>
+<fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.exibirTelaCadastroCargo"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroCargoFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 </qualifiedTypeNameHistroy>

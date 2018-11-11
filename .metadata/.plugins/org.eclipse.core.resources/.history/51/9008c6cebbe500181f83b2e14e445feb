@@ -38,7 +38,7 @@ public class CadastroUsuarioFrame extends JFrame{
 	}
 	
 	public CadastroUsuarioFrame(){
-		this.setSize(700,700);
+		this.setSize(600,600);
 		this.setTitle("Tela de Cadastro de Usuário");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -206,23 +206,6 @@ public class CadastroUsuarioFrame extends JFrame{
 		gbc.weightx = 0.0;
 		gbc.fill = GridBagConstraints.NONE;
 		this.add(botaoSalvarUsuario,gbc);
-		
-		JButton botaoCancelar = new JButton();
-		botaoCancelar.setText("Cancelar");
-		botaoCancelar.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
-		gbc.gridx = 0;
-		gbc.gridy = 12;
-		gbc.gridwidth = 2;
-		gbc.anchor = GridBagConstraints.CENTER;
-		gbc.weightx = 0.0;
-		gbc.fill = GridBagConstraints.NONE;
-		this.add(botaoCancelar,gbc);
 		
 	
 	}

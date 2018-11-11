@@ -38,7 +38,7 @@ public class CadastroUsuarioFrame extends JFrame{
 	}
 	
 	public CadastroUsuarioFrame(){
-		this.setSize(700,700);
+		this.setSize(600,600);
 		this.setTitle("Tela de Cadastro de Usuário");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -213,6 +213,7 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
 				
 			}
 		});

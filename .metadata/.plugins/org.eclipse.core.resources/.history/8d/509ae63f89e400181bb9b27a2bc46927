@@ -1,8 +1,0 @@
-package br.edu.univas.pcelab4.view;
-
-import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
-
-public class CadastroUsuarioFrame {
-	CadastraUsuarioListener listener;
-}
-
