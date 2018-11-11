@@ -34,14 +34,21 @@ public class AddUserController {
 	
 	private void cadastraUsuario() {
 		usuario = new Usuario();
+		endereco = new Endereco();
 		usuario.setCpf(frame.getCampoCpf().getText());
 		usuario.setNome(frame.getCampoNome().getText());
 		usuario.setEmail(frame.getCampoEmail().getText());
 		usuario.setTelefone(frame.getCampoTelefone().getText());
 		usuario.setUserName(frame.getCampoUser().getText());
 		usuario.setPassword(frame.getCampoSenha().getText());
+		usuario.setCargo(frame.getListaDeCargos());
 		
-		dao.salvar(usuario);
+		endereco.setRua(frame.getCampoRua().getText());
+		endereco.setNumero(frame.getCampoNumero().getText());
+		endereco.setBairro(frame.getCampoBairro().getText());
+		endereco.setCep(frame.getCampoCep().getText());
+		
+		dao.salvar(usuario,endereco);
 		clearFields();
 	}
 	
@@ -52,7 +59,11 @@ public class AddUserController {
 				frame.getCampoEmail(),
 				frame.getCampoTelefone(),
 				frame.getCampoUser(),
-				frame.getCampoSenha());
+				frame.getCampoSenha(),
+				frame.getCampoRua(),
+				frame.getCampoNumero(),
+				frame.getCampoBairro(),
+				frame.getCampoCep());
 		
 		for(JTextField jTextField:fields){
 			clearField(jTextField);

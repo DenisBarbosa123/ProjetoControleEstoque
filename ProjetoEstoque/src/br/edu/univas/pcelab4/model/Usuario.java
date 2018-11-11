@@ -7,6 +7,7 @@ public class Usuario {
 	private String password;
 	private String email;
 	private String telefone;
+	private String cargo;
 	public String getCpf() {
 		return cpf;
 	}
@@ -43,5 +44,14 @@ public class Usuario {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+	
+	
+	
 	
 }

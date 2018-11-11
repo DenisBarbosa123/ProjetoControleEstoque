@@ -1,5 +1,6 @@
 package br.edu.univas.pcelab4.view;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -8,9 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -24,21 +27,22 @@ public class CadastroUsuarioFrame extends JFrame{
 	 JTextField campoNome;
 	 JTextField campoEmail;
 	 JTextField campoUser;
-	 JTextField campoSenha;
-	 JTextField campoSenhaConf;
+	 JPasswordField campoSenha;
 	 JTextField campoTelefone;
 	
 	 JTextField campoRua;
 	 JTextField campoNumero;
 	 JTextField campoBairro;
 	 JTextField campoCep;
+	 
+	 JComboBox<String> listaDeCargos;
 
 	public void setListener(CadastraUsuarioListener listener){
 		this.listener = listener;
 	}
 	
 	public CadastroUsuarioFrame(){
-		this.setSize(700,700);
+		this.setSize(750,750);
 		this.setTitle("Tela de Cadastro de Usuário");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -62,7 +66,7 @@ public class CadastroUsuarioFrame extends JFrame{
 		gbc.gridx = 0;
 		gbc.gridy = 1;
 		gbc.fill = GridBagConstraints.LINE_START;
-		gbc.insets = new Insets(15,15,15,15);
+		gbc.insets = new Insets(10,10,10,10);
 		this.add(cpfLabel, gbc);
 		
 		campoCpf = new JTextField();
@@ -162,10 +166,25 @@ public class CadastroUsuarioFrame extends JFrame{
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		this.add(campoCep,gbc);
 		
+		JLabel cargoLabel = new JLabel();
+		cargoLabel.setText("Cargo:");
+		gbc.gridx = 0;
+		gbc.gridy = 9;
+		gbc.weightx = 0.0;
+		this.add(cargoLabel,gbc);
+		
+		listaDeCargos = new JComboBox<>();
+		listaDeCargos.addItem("Test1");
+		listaDeCargos.addItem("Test2");
+		listaDeCargos.setPreferredSize(new Dimension(400, 40));
+		gbc.gridx = 1;
+		gbc.weightx = 1.0;
+		this.add(listaDeCargos, gbc);
+		
 		JLabel userNameLabel = new JLabel();
 		userNameLabel.setText("Login:");
 		gbc.gridx = 0;
-		gbc.gridy = 9;
+		gbc.gridy = 10;
 		gbc.weightx = 0.0;
 		this.add(userNameLabel, gbc);
 		
@@ -178,11 +197,11 @@ public class CadastroUsuarioFrame extends JFrame{
 		JLabel senhaLabel = new JLabel();
 		senhaLabel.setText("Senha:");
 		gbc.gridx = 0;
-		gbc.gridy = 10;
+		gbc.gridy = 11;
 		gbc.weightx = 0.0;
 		this.add(senhaLabel, gbc);
 		
-		campoSenha = new JTextField();
+		campoSenha = new JPasswordField();
 		campoSenha.setColumns(15);
 		gbc.gridx = 1;
 		gbc.weightx = 1.00;
@@ -200,7 +219,7 @@ public class CadastroUsuarioFrame extends JFrame{
 			}
 		});
 		gbc.gridx = 0;
-		gbc.gridy = 11;
+		gbc.gridy = 12;
 		gbc.gridwidth = 2;
 		gbc.anchor = GridBagConstraints.CENTER;
 		gbc.weightx = 0.0;
@@ -217,7 +236,7 @@ public class CadastroUsuarioFrame extends JFrame{
 			}
 		});
 		gbc.gridx = 0;
-		gbc.gridy = 12;
+		gbc.gridy = 13;
 		gbc.gridwidth = 2;
 		gbc.anchor = GridBagConstraints.CENTER;
 		gbc.weightx = 0.0;
@@ -243,16 +262,54 @@ public class CadastroUsuarioFrame extends JFrame{
 		return campoUser;
 	}
 
-	public JTextField getCampoSenha() {
+	public JPasswordField getCampoSenha() {
 		return campoSenha;
-	}
-
-	public JTextField getCampoSenhaConf() {
-		return campoSenhaConf;
 	}
 
 	public JTextField getCampoTelefone() {
 		return campoTelefone;
 	}
+
+	public JTextField getCampoRua() {
+		return campoRua;
+	}
+
+	public void setCampoRua(JTextField campoRua) {
+		this.campoRua = campoRua;
+	}
+
+	public JTextField getCampoNumero() {
+		return campoNumero;
+	}
+
+	public void setCampoNumero(JTextField campoNumero) {
+		this.campoNumero = campoNumero;
+	}
+
+	public JTextField getCampoBairro() {
+		return campoBairro;
+	}
+
+	public void setCampoBairro(JTextField campoBairro) {
+		this.campoBairro = campoBairro;
+	}
+
+	public JTextField getCampoCep() {
+		return campoCep;
+	}
+
+	public void setCampoCep(JTextField campoCep) {
+		this.campoCep = campoCep;
+	}
+
+	public String getListaDeCargos() {
+		String cargo = listaDeCargos.getSelectedItem()+"";
+		return cargo;
+	}
+
+	public void setListaDeCargos(JComboBox<String> listaDeCargos) {
+		this.listaDeCargos = listaDeCargos;
+	}
+	
 }
 
