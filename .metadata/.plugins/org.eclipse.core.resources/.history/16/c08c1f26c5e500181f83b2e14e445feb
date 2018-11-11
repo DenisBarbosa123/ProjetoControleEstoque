@@ -1,0 +1,19 @@
+package br.edu.univas.pcelab4.dao;
+
+import java.sql.Connection;
+
+import br.edu.univas.pcelab4.model.Endereco;
+import br.edu.univas.pcelab4.model.Usuario;
+
+public class UserDAO {
+	private Connection connection;
+	
+	public UserDAO(){
+		connection = ConnectionUtil.getConnection();
+	}
+	
+	
+	public void salvar(Usuario usuario, Endereco endereco){
+		
+	}
+}

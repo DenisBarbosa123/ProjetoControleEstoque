@@ -1,5 +1,7 @@
 package br.edu.univas.pcelab4.controller;
 
+import java.sql.SQLException;
+
 import br.edu.univas.pcela4.listener.exibirTelaCadastroCargo;
 import br.edu.univas.pcela4.listener.exibirTelaCadastroUsuarioListener;
 import br.edu.univas.pcelab4.model.Usuario;
@@ -8,13 +10,15 @@ import br.edu.univas.pcelab4.view.CadastroCargoFrame;
 import br.edu.univas.pcelab4.view.CadastroUsuarioFrame;
 
 public class MainController {
+	AddUserController addUserController;
 	CadastroUsuarioFrame cadUsuario;
 	Usuario usuario;
 	AdministradorFrame admFrame;
 	exibirTelaCadastroUsuarioListener listener;
 	CadastroCargoFrame cgFrame;
 	
-	public MainController(){
+	public MainController() throws SQLException{
+		addUserController = new AddUserController();
 		admFrame = new AdministradorFrame();
 		usuario = new Usuario();
 		admFrame.setListener(new exibirTelaCadastroUsuarioListener() {

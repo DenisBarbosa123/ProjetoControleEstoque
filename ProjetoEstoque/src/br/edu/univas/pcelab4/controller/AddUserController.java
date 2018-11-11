@@ -1,5 +1,6 @@
 package br.edu.univas.pcelab4.controller;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,13 +18,14 @@ public class AddUserController {
 	private Endereco endereco;
 	private CadastroUsuarioFrame frame;
 	
-	public AddUserController(){
+	public AddUserController() throws SQLException{
 		dao = new UserDAO();
 		frame = new CadastroUsuarioFrame();
 		frame.setListener(new CadastraUsuarioListener() {
 			
 			@Override
 			public void salvarUsuario() {
+				
 					cadastraUsuario();
 			
 			}
@@ -33,6 +35,7 @@ public class AddUserController {
 	}
 	
 	private void cadastraUsuario() {
+		System.out.println("cheguei ate aqui");
 		usuario = new Usuario();
 		endereco = new Endereco();
 		usuario.setCpf(frame.getCampoCpf().getText());
@@ -41,14 +44,15 @@ public class AddUserController {
 		usuario.setTelefone(frame.getCampoTelefone().getText());
 		usuario.setUserName(frame.getCampoUser().getText());
 		usuario.setPassword(frame.getCampoSenha().getText());
-		usuario.setCargo(frame.getListaDeCargos());
+		//usuario.setCargo(frame.getListaDeCargos());
 		
 		endereco.setRua(frame.getCampoRua().getText());
 		endereco.setNumero(frame.getCampoNumero().getText());
 		endereco.setBairro(frame.getCampoBairro().getText());
 		endereco.setCep(frame.getCampoCep().getText());
 		
-		dao.salvar(usuario,endereco);
+		dao.salvarUser(usuario);
+		dao.salvarEndereco(usuario,endereco);
 		clearFields();
 	}
 	

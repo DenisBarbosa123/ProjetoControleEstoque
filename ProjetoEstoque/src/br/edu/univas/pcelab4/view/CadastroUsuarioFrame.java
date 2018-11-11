@@ -166,20 +166,20 @@ public class CadastroUsuarioFrame extends JFrame{
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		this.add(campoCep,gbc);
 		
-		JLabel cargoLabel = new JLabel();
-		cargoLabel.setText("Cargo:");
-		gbc.gridx = 0;
-		gbc.gridy = 9;
-		gbc.weightx = 0.0;
-		this.add(cargoLabel,gbc);
-		
-		listaDeCargos = new JComboBox<>();
-		listaDeCargos.addItem("Test1");
-		listaDeCargos.addItem("Test2");
-		listaDeCargos.setPreferredSize(new Dimension(400, 40));
-		gbc.gridx = 1;
-		gbc.weightx = 1.0;
-		this.add(listaDeCargos, gbc);
+//		JLabel cargoLabel = new JLabel();
+//		cargoLabel.setText("Cargo:");
+//		gbc.gridx = 0;
+//		gbc.gridy = 9;
+//		gbc.weightx = 0.0;
+//		this.add(cargoLabel,gbc);
+//		
+//		listaDeCargos = new JComboBox<>();
+//		listaDeCargos.addItem("Test1");
+//		listaDeCargos.addItem("Test2");
+//		listaDeCargos.setPreferredSize(new Dimension(400, 40));
+//		gbc.gridx = 1;
+//		gbc.weightx = 1.0;
+//		this.add(listaDeCargos, gbc);
 		
 		JLabel userNameLabel = new JLabel();
 		userNameLabel.setText("Login:");
@@ -214,6 +214,7 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("cheguei ate aqui");
 					listener.salvarUsuario();
 					
 			}
@@ -302,14 +303,14 @@ public class CadastroUsuarioFrame extends JFrame{
 		this.campoCep = campoCep;
 	}
 
-	public String getListaDeCargos() {
-		String cargo = listaDeCargos.getSelectedItem()+"";
-		return cargo;
-	}
-
-	public void setListaDeCargos(JComboBox<String> listaDeCargos) {
-		this.listaDeCargos = listaDeCargos;
-	}
+//	public String getListaDeCargos() {
+//		String cargo = listaDeCargos.getSelectedItem()+"";
+//		return cargo;
+//	}
+//
+//	public void setListaDeCargos(JComboBox<String> listaDeCargos) {
+//		this.listaDeCargos = listaDeCargos;
+//	}
 	
 }
 
