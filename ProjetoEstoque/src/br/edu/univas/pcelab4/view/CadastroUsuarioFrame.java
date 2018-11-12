@@ -26,7 +26,7 @@ public class CadastroUsuarioFrame extends JFrame{
 	 JTextField campoNome;
 	 JTextField campoEmail;
 	 JTextField campoUser;
-	 JPasswordField campoSenha;
+	 JTextField campoSenha;
 	 JTextField campoTelefone;
 	
 	 JTextField campoRua;
@@ -260,7 +260,7 @@ public class CadastroUsuarioFrame extends JFrame{
 		return campoUser;
 	}
 
-	public JPasswordField getCampoSenha() {
+	public JTextField getCampoSenha() {
 		return campoSenha;
 	}
 

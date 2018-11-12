@@ -15,15 +15,10 @@
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.AdministradorFrame"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.exibirTelaCadastroUsuarioListener"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.exibirTelaCadastroCargo"/>
-<fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroCargoFrame"/>
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="java.awt.GridBagConstraints"/>
-<fullyQualifiedTypeName name="javax.swing.JButton"/>
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
-<fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.model.Endereco"/>
@@ -36,4 +31,12 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.CadastraUsuarioListener"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.EstoquistaListener"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.EstoquistaFrame"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcelab4.controller.EstoquistaController"/>
 </qualifiedTypeNameHistroy>

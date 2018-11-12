@@ -24,7 +24,6 @@ public class AddUserController {
 		frame.setListener(new CadastraUsuarioListener() {
 			@Override
 			public void salvarUsuario() {
-					System.out.println("passei aqui");
 					cadastraUsuario();
 			
 			}

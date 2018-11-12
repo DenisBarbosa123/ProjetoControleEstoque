@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;br.edu.univas.pcelab4.view.MainEstoquistaView&apos; to &apos;EstoquistaFrame&apos;&#x0D;&#x0A;- Original project: &apos;ProjetoEstoque&apos;&#x0D;&#x0A;- Original element: &apos;br.edu.univas.pcelab4.view.MainEstoquistaView&apos;&#x0D;&#x0A;- Renamed element: &apos;br.edu.univas.pcelab4.view.EstoquistaFrame&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MainEstoquistaView&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;br.edu.univas.pcelab4.view{MainEstoquistaView.java[MainEstoquistaView" matchStrategy="1" name="EstoquistaFrame" qualified="false" references="true" similarDeclarations="false" stamp="1541982716043" textual="false" version="1.0"/>
+</session>
