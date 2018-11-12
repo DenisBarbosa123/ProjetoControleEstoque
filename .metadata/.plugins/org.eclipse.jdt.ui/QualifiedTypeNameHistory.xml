@@ -2,10 +2,8 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroProdutoFrame"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.controller.MainController"/>
-<fullyQualifiedTypeName name="java.awt.GridBagLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
 <fullyQualifiedTypeName name="javax.swing.JTable"/>
-<fullyQualifiedTypeName name="java.awt.Insets"/>
 <fullyQualifiedTypeName name="java.awt.Font"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.dao.UserDAO"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroUsuarioFrame"/>
@@ -16,8 +14,6 @@
 <fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.exibirTelaCadastroUsuarioListener"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.exibirTelaCadastroCargo"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.CadastroCargoFrame"/>
-<fullyQualifiedTypeName name="javax.swing.JTextField"/>
-<fullyQualifiedTypeName name="java.awt.GridBagConstraints"/>
 <fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
 <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
@@ -30,7 +26,6 @@
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.controller.AddUserController"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.CadastraUsuarioListener"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
@@ -39,4 +34,9 @@
 <fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.EstoquistaListener"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.view.EstoquistaFrame"/>
 <fullyQualifiedTypeName name="br.edu.univas.pcelab4.controller.EstoquistaController"/>
+<fullyQualifiedTypeName name="br.edu.univas.pcela4.listener.CadastraUsuarioListener"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="java.awt.GridBagLayout"/>
+<fullyQualifiedTypeName name="java.awt.GridBagConstraints"/>
+<fullyQualifiedTypeName name="java.awt.Insets"/>
 </qualifiedTypeNameHistroy>
