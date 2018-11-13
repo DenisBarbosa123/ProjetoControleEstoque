@@ -31,7 +31,7 @@ public class CargoDAO {
 		}
 	}
 	
-	public ArrayList<Cargo> getAllCargos(){
+	public ArrayList<Cargo> buscarCargos(){
 		ArrayList<Cargo> cargos = new ArrayList<>();
 		
 		String sql = "select * from cargo";
@@ -39,12 +39,6 @@ public class CargoDAO {
 		try{
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(sql);
-			
-			while(resultSet.next()){
-				Cargo cargo = new Cargo();
-				cargo.setNome(resultSet.getString("nome"));
-				cargos.add(cargo);
-			}
 		}catch(SQLException e){
 			e.printStackTrace();
 		}

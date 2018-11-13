@@ -2,10 +2,7 @@ package br.edu.univas.pcelab4.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 
 import br.edu.univas.pcelab4.model.Cargo;
 
@@ -31,25 +28,7 @@ public class CargoDAO {
 		}
 	}
 	
-	public ArrayList<Cargo> getAllCargos(){
-		ArrayList<Cargo> cargos = new ArrayList<>();
+	public void buscarCargos(){
 		
-		String sql = "select * from cargo";
-		
-		try{
-			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery(sql);
-			
-			while(resultSet.next()){
-				Cargo cargo = new Cargo();
-				cargo.setNome(resultSet.getString("nome"));
-				cargos.add(cargo);
-			}
-		}catch(SQLException e){
-			e.printStackTrace();
-		}
-		
-		
-		return cargos;
 	}
 }

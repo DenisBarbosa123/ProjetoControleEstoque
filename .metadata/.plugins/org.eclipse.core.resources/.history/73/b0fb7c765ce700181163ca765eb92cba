@@ -1,7 +1,5 @@
 package br.edu.univas.pcelab4.controller;
 
-import java.sql.SQLException;
-
 import br.edu.univas.pcela4.listener.CadastraCargoListener;
 import br.edu.univas.pcela4.listener.exibirTelaCadastroCargo;
 import br.edu.univas.pcelab4.dao.CargoDAO;
@@ -14,7 +12,7 @@ public class AddCargoController {
 	Cargo cargo;
 	exibirTelaCadastroCargo listener;
 	
-	public AddCargoController() throws SQLException {
+	public AddCargoController() {
 		frame = new CadastroCargoFrame();
 		dao = new CargoDAO();
 		frame.setListener(new CadastraCargoListener() {
@@ -43,8 +41,7 @@ public class AddCargoController {
 	}
 	private void CadastraCargo() {
 		cargo = new Cargo();
-		cargo.setNome(frame.getCampoCargo().getText());
-		dao.salvarCargo(cargo);
+		
 		
 	}
 }

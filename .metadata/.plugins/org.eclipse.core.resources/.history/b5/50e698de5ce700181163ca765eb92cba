@@ -14,10 +14,6 @@ import br.edu.univas.pcela4.listener.CadastraCargoListener;
 public class CadastroCargoFrame extends JFrame{
 	JTextField campoCargo;
 	
-	public JTextField getCampoCargo(){
-		return campoCargo;
-	}
-	
 
 	public void setCampoCargo(JTextField campoCargo) {
 		this.campoCargo = campoCargo;

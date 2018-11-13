@@ -44,7 +44,6 @@ public class AddCargoController {
 	private void CadastraCargo() {
 		cargo = new Cargo();
 		cargo.setNome(frame.getCampoCargo().getText());
-		dao.salvarCargo(cargo);
 		
 	}
 }
