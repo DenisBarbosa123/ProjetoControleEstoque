@@ -22,18 +22,19 @@ public class AddUserController {
 		dao = new UserDAO();
 		frame = new CadastroUsuarioFrame();
 		frame.setListener(new CadastraUsuarioListener() {
+			
 			@Override
 			public void salvarUsuario() {
-				
-					cadastraUsuario();
-			
+				// TODO Auto-generated method stub
+				cadastraUsuario();
 			}
-
-			
 		});
 	}
 	
-	private void cadastraUsuario() {
+	public void abrirTelaCadastro(){
+		frame.setVisible(true);
+	}
+	public void cadastraUsuario() {
 		System.out.println("cheguei ate aqui");
 		usuario = new Usuario();
 		endereco = new Endereco();

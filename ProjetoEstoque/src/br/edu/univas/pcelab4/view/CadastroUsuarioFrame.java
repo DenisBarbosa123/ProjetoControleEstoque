@@ -17,10 +17,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
+import br.edu.univas.pcelab4.controller.AddUserController;
 
 
 public class CadastroUsuarioFrame extends JFrame{
 	private CadastraUsuarioListener listener;
+	
 	
 	 JTextField campoCpf;
 	 JTextField campoNome;
@@ -38,6 +40,7 @@ public class CadastroUsuarioFrame extends JFrame{
 
 	public void setListener(CadastraUsuarioListener listener){
 		this.listener = listener;
+		System.out.println("setListener" + listener);
 	}
 	
 	public CadastroUsuarioFrame(){
@@ -46,6 +49,7 @@ public class CadastroUsuarioFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		addComponents();
+		
 		
 	}
 
@@ -213,7 +217,8 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-						listener.salvarUsuario();
+				System.out.println("a\n");
+				salvarUsuario();
 			}
 		});
 		gbc.gridx = 0;
@@ -244,6 +249,9 @@ public class CadastroUsuarioFrame extends JFrame{
 	
 	}
 
+	public void salvarUsuario(){
+		listener.salvarUsuario();
+	}
 	public JTextField getCampoCpf() {
 		return campoCpf;
 	}

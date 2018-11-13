@@ -21,11 +21,13 @@ public class MainController {
 		addUserController = new AddUserController();
 		admFrame = new AdministradorFrame();
 		usuario = new Usuario();
+		//cadUsuario = new CadastroUsuarioFrame();
 		admFrame.setListener(new exibirTelaCadastroUsuarioListener() {
 			
 			@Override
 			public void abreTelaCadastroUsuario() {
-				abrirTelaCadastroUsuario();
+				//abrirTelaCadastroUsuario();
+				addUserController.abrirTelaCadastro();
 				
 			}
 		});
@@ -44,13 +46,13 @@ public class MainController {
 		admFrame.setVisible(true);
 	}
 	private void abrirTelaCadastroUsuario() {
-		cadUsuario = new CadastroUsuarioFrame();
+		//cadUsuario = new CadastroUsuarioFrame();
 		cadUsuario.setVisible(true);
 		
 	}
 	
 	private void abrirTelaCadastroCargo() {
-		cgFrame = new CadastroCargoFrame();
+		//cgFrame = new CadastroCargoFrame();
 		cgFrame.setVisible(true);
 		
 	}
