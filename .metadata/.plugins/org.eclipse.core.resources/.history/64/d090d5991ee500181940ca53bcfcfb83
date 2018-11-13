@@ -1,7 +1,0 @@
-package br.edu.univas.pcelab4.view;
-
-public class CadastroCargoFrame extends JFrame{
-	public CadastroCargoFrame(){
-		this.se
-	}
-}
