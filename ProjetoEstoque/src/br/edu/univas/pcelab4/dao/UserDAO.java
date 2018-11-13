@@ -17,7 +17,7 @@ public class UserDAO {
 	
 	public void salvarUser(Usuario usuario){
 		int index = 1;
-		String sql = "insert into usuario (cpf, nome, telefone, email, login, senha, fkcargo)"
+		String sql = "insert into usuario (cpf, nome, telefone, email, login, senha, fk_cargo)"
 				+ "values(?,?,?,?,?,?,?)";
 		
 		PreparedStatement statement;
@@ -30,7 +30,7 @@ public class UserDAO {
 			statement.setString(index++, usuario.getEmail());
 			statement.setString(index++, usuario.getUserName());
 			statement.setString(index++, usuario.getPassword());
-			statement.setString(index++, usuario.getCargo());
+			statement.setInt(index++, 1);
 			statement.execute();
 		}catch(SQLException e){
 			System.out.println("Problemas para popular a tabela usuario");
@@ -49,11 +49,10 @@ public class UserDAO {
 			statement = connection.prepareStatement(sql);
 			statement.setString(index++, usuario.getCpf());
 			statement.setString(index++, endereco.getRua());
-			statement.setString(index++, endereco.getNumero());
+			statement.setInt(index++, Integer.parseInt(endereco.getNumero()));
 			statement.setString(index++, endereco.getBairro());
 			statement.setString(index++, endereco.getCep());
 			statement.execute();
-			
 		}catch(SQLException e){
 			System.out.println("Problemas para popular tabela endereco");
 			e.printStackTrace();

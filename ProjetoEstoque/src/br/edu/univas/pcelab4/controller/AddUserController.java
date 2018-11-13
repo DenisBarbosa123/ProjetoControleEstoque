@@ -25,17 +25,25 @@ public class AddUserController {
 			
 			@Override
 			public void salvarUsuario() {
-				// TODO Auto-generated method stub
 				cadastraUsuario();
+			}
+
+			@Override
+			public void fecharTelaCadastroUsuario() {
+				fecharTelaUsuario();
+				
 			}
 		});
 	}
 	
-	public void abrirTelaCadastro(){
+	public void abrirTelaCadastroUsuario(){
 		frame.setVisible(true);
 	}
+	public void fecharTelaUsuario(){
+		frame.setVisible(false);
+	}
 	public void cadastraUsuario() {
-		System.out.println("cheguei ate aqui");
+		//System.out.println("cheguei ate aqui");
 		usuario = new Usuario();
 		endereco = new Endereco();
 		usuario.setCpf(frame.getCampoCpf().getText());
@@ -54,6 +62,9 @@ public class AddUserController {
 		dao.salvarUser(usuario);
 		dao.salvarEndereco(usuario,endereco);
 		clearFields();
+		
+		
+		
 	}
 	
 	private void clearFields() {

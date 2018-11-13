@@ -9,8 +9,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.edu.univas.pcela4.listener.CadastraCargoListener;
+
 public class CadastroCargoFrame extends JFrame{
 	JTextField campoCargo;
+	CadastraCargoListener listener;
+	
+	public void setListener(CadastraCargoListener listener){
+		this.listener = listener;
+	}
 	
 	public CadastroCargoFrame(){
 		this.setTitle("Tela de Cadastro de Cargo");
@@ -32,16 +39,23 @@ public class CadastroCargoFrame extends JFrame{
 		
 		JButton botaoCadastrarCargo = new JButton();
 		botaoCadastrarCargo.setText("Cadastrar cargo");
-		this.add(botaoCadastrarCargo);
-		
-		JButton botaoSair = new JButton();
-		botaoSair.setText("Cancelar");
 		botaoCadastrarCargo.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//implementar interface listener para programa sair
+				listener.salvarCargo();
 				
+			}
+		});
+		this.add(botaoCadastrarCargo);
+		
+		JButton botaoSair = new JButton();
+		botaoSair.setText("Cancelar");
+		botaoSair.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				listener.sairTelaCargo();
 			}
 		});
 		this.add(botaoSair);

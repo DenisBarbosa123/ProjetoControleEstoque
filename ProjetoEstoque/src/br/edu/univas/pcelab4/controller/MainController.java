@@ -11,23 +11,20 @@ import br.edu.univas.pcelab4.view.CadastroUsuarioFrame;
 
 public class MainController {
 	AddUserController addUserController;
-	CadastroUsuarioFrame cadUsuario;
-	Usuario usuario;
+	AddCargoController addCargoController;
 	AdministradorFrame admFrame;
 	exibirTelaCadastroUsuarioListener listener;
-	CadastroCargoFrame cgFrame;
 	
 	public MainController() throws SQLException{
 		addUserController = new AddUserController();
 		admFrame = new AdministradorFrame();
-		usuario = new Usuario();
-		//cadUsuario = new CadastroUsuarioFrame();
+		addCargoController = new AddCargoController();
+		
 		admFrame.setListener(new exibirTelaCadastroUsuarioListener() {
 			
 			@Override
 			public void abreTelaCadastroUsuario() {
-				//abrirTelaCadastroUsuario();
-				addUserController.abrirTelaCadastro();
+				addUserController.abrirTelaCadastroUsuario();
 				
 			}
 		});
@@ -36,7 +33,7 @@ public class MainController {
 			
 			@Override
 			public void abreTelaCadastroCargo() {
-				abrirTelaCadastroCargo();
+				addCargoController.abrirTelaCadastroCargo();
 				
 			}
 		});
@@ -45,16 +42,16 @@ public class MainController {
 	public void abrirTelaAdm(){
 		admFrame.setVisible(true);
 	}
-	private void abrirTelaCadastroUsuario() {
-		//cadUsuario = new CadastroUsuarioFrame();
-		cadUsuario.setVisible(true);
-		
-	}
-	
-	private void abrirTelaCadastroCargo() {
-		//cgFrame = new CadastroCargoFrame();
-		cgFrame.setVisible(true);
-		
-	}
+//	private void abrirTelaCadastroUsuario() {
+//		//cadUsuario = new CadastroUsuarioFrame();
+//		cadUsuario.setVisible(true);
+//		
+//	}
+//	
+//	private void abrirTelaCadastroCargo() {
+//		//cgFrame = new CadastroCargoFrame();
+//		cgFrame.setVisible(true);
+//		
+//	}
 	
 }

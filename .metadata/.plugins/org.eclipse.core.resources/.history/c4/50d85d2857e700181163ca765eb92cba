@@ -1,0 +1,8 @@
+package br.edu.univas.pcelab4.controller;
+
+import br.edu.univas.pcelab4.view.CadastroCargoFrame;
+
+public class AddCargoController {
+	CadastroCargoFrame frame;
+	CargoDAO dao;
+}

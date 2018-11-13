@@ -217,7 +217,7 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("a\n");
+				//System.out.println("a\n");
 				salvarUsuario();
 			}
 		});
@@ -229,22 +229,22 @@ public class CadastroUsuarioFrame extends JFrame{
 		gbc.fill = GridBagConstraints.NONE;
 		this.add(botaoSalvarUsuario,gbc);
 		
-//		JButton botaoCancelar = new JButton();
-//		botaoCancelar.setText("Cancelar");
-//		botaoCancelar.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent arg0) {
-//				
-//			}
-//		});
-//		gbc.gridx = 0;
-//		gbc.gridy = 13;
-//		gbc.gridwidth = 2;
-//		gbc.anchor = GridBagConstraints.CENTER;
-//		gbc.weightx = 0.0;
-//		gbc.fill = GridBagConstraints.NONE;
-//		this.add(botaoCancelar,gbc);
+		JButton botaoCancelar = new JButton();
+		botaoCancelar.setText("Cancelar");
+		botaoCancelar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				listener.fecharTelaCadastroUsuario();
+			}
+		});
+		gbc.gridx = 0;
+		gbc.gridy = 13;
+		gbc.gridwidth = 2;
+		gbc.anchor = GridBagConstraints.CENTER;
+		gbc.weightx = 0.0;
+		gbc.fill = GridBagConstraints.NONE;
+		this.add(botaoCancelar,gbc);
 		
 	
 	}
@@ -307,6 +307,11 @@ public class CadastroUsuarioFrame extends JFrame{
 	public void setCampoCep(JTextField campoCep) {
 		this.campoCep = campoCep;
 	}
+
+//	public void telaErro() {
+//		JOptionPane.showMessageDialog(null,this, "Erro", JOptionPane.ERROR_MESSAGE);
+//		
+//	}
 
 //	public String getListaDeCargos() {
 //		String cargo = listaDeCargos.getSelectedItem()+"";
