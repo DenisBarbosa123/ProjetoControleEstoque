@@ -217,8 +217,7 @@ public class CadastroUsuarioFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//System.out.println("a\n");
-				salvarUsuario();
+				listener.salvarUsuario();
 			}
 		});
 		gbc.gridx = 0;
@@ -249,9 +248,12 @@ public class CadastroUsuarioFrame extends JFrame{
 	
 	}
 
-	public void salvarUsuario(){
-		listener.salvarUsuario();
-	}
+//	public void exibirTelaSucesso(){
+//		JOptionPane.showMessageDialog(null,this, "Confirmação", JOptionPane.INFORMATION_MESSAGE);
+//	}
+//	public void exibirTelaErro(){
+//		JOptionPane.showMessageDialog(null,this, "Erro", JOptionPane.ERROR_MESSAGE);
+//	}
 	public JTextField getCampoCpf() {
 		return campoCpf;
 	}
@@ -309,7 +311,7 @@ public class CadastroUsuarioFrame extends JFrame{
 	}
 
 //	public void telaErro() {
-//		JOptionPane.showMessageDialog(null,this, "Erro", JOptionPane.ERROR_MESSAGE);
+//		
 //		
 //	}
 

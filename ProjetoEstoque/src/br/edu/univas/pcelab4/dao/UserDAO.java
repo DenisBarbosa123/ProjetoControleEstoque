@@ -15,7 +15,7 @@ public class UserDAO {
 	}
 	
 	
-	public void salvarUser(Usuario usuario){
+	public boolean salvarUser(Usuario usuario){
 		int index = 1;
 		String sql = "insert into usuario (cpf, nome, telefone, email, login, senha, fk_cargo)"
 				+ "values(?,?,?,?,?,?,?)";
@@ -32,9 +32,11 @@ public class UserDAO {
 			statement.setString(index++, usuario.getPassword());
 			statement.setInt(index++, 1);
 			statement.execute();
+			return true;
 		}catch(SQLException e){
 			System.out.println("Problemas para popular a tabela usuario");
 			e.printStackTrace();
+			return false;
 		}
 	}
 	
