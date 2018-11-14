@@ -47,15 +47,16 @@ public class AddUserController {
 		//System.out.println("cheguei ate aqui");
 		usuario = new Usuario();
 		endereco = new Endereco();
-//		if(frame.getCampoCpf().getText()==null || frame.getCampoNome().getText()==null || frame.getCampoEmail().getText()==null
-//			||	frame.getCampoTelefone().getText()==null || frame.getCampoUser().getText()==null || frame.getCampoSenha().getText()==null
-//				|| frame.getCampoRua()==null || frame.getCampoNumero() == null || frame.getCampoBairro()==null 
-//					|| frame.getCampoCep()==null){
-//			
-//			JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO - CAMPO NULO", "Erro", JOptionPane.ERROR_MESSAGE);
-//			
-//			
-//		}else{
+		if(frame.getCampoCpf().getText().length()==0 || frame.getCampoNome().getText().length()==0 || frame.getCampoEmail().getText().length()==0
+		&&	frame.getCampoTelefone().getText().length()==0 && frame.getCampoUser().getText().length()==0 && frame.getCampoSenha().getText().length()==0
+				&& frame.getCampoRua().getText().length()==0 && frame.getCampoNumero().getText().length() == 0 && frame.getCampoBairro().getText().length()==0 
+					&& frame.getCampoCep().getText().length()==0){
+			
+			JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO - CAMPO NULO", "Erro", JOptionPane.ERROR_MESSAGE);
+			clearFields();
+			
+			
+		}else{
 			usuario.setCpf(frame.getCampoCpf().getText());
 			usuario.setNome(frame.getCampoNome().getText());
 			usuario.setEmail(frame.getCampoEmail().getText());
@@ -63,7 +64,6 @@ public class AddUserController {
 			usuario.setUserName(frame.getCampoUser().getText());
 			usuario.setPassword(frame.getCampoSenha().getText());
 			//usuario.setCargo(frame.getListaDeCargos());
-			
 			endereco.setRua(frame.getCampoRua().getText());
 			endereco.setNumero(frame.getCampoNumero().getText());
 			endereco.setBairro(frame.getCampoBairro().getText());
@@ -71,6 +71,7 @@ public class AddUserController {
 			
 			boolean retornoMetodocadastro= dao.salvarUser(usuario);
 			if(retornoMetodocadastro == true){
+				System.out.println(frame.getCampoNome().getText());
 				JOptionPane.showMessageDialog(null,"CADASTRO FEITO COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
 			}else{
 				//this.abrirTelaCadastroUsuario();
@@ -79,7 +80,7 @@ public class AddUserController {
 			dao.salvarEndereco(usuario,endereco);
 			clearFields();
 			
-		//}
+		}
 		
 		
 		
