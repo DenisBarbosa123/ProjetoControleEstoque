@@ -47,13 +47,15 @@ public class AddUserController {
 		//System.out.println("cheguei ate aqui");
 		usuario = new Usuario();
 		endereco = new Endereco();
-		if(frame.getCampoCpf()==null || frame.getCampoNome()==null || frame.getCampoEmail()==null
-			||	frame.getCampoTelefone()==null || frame.getCampoUser()==null || frame.getCampoSenha()==null
-				|| frame.getCampoRua()==null || frame.getCampoNumero() == null || frame.getCampoBairro()==null || frame.getCampoCep()==null){
-			JOptionPane.showMessageDialog(null,"CADASTRO FEITO COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
-			
-			
-		}else{
+//		if(frame.getCampoCpf().getText()==null || frame.getCampoNome().getText()==null || frame.getCampoEmail().getText()==null
+//			||	frame.getCampoTelefone().getText()==null || frame.getCampoUser().getText()==null || frame.getCampoSenha().getText()==null
+//				|| frame.getCampoRua()==null || frame.getCampoNumero() == null || frame.getCampoBairro()==null 
+//					|| frame.getCampoCep()==null){
+//			
+//			JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO - CAMPO NULO", "Erro", JOptionPane.ERROR_MESSAGE);
+//			
+//			
+//		}else{
 			usuario.setCpf(frame.getCampoCpf().getText());
 			usuario.setNome(frame.getCampoNome().getText());
 			usuario.setEmail(frame.getCampoEmail().getText());
@@ -71,12 +73,13 @@ public class AddUserController {
 			if(retornoMetodocadastro == true){
 				JOptionPane.showMessageDialog(null,"CADASTRO FEITO COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
 			}else{
+				//this.abrirTelaCadastroUsuario();
 				JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
 			dao.salvarEndereco(usuario,endereco);
 			clearFields();
 			
-		}
+		//}
 		
 		
 		

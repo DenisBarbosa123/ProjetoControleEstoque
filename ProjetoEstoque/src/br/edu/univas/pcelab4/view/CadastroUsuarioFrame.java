@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -308,6 +309,10 @@ public class CadastroUsuarioFrame extends JFrame{
 
 	public void setCampoCep(JTextField campoCep) {
 		this.campoCep = campoCep;
+	}
+	
+	public void adicionarCargoLista(Vector vector){
+		//implementar
 	}
 
 //	public void telaErro() {
