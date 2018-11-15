@@ -17,7 +17,7 @@ public class UserDAO {
 	
 	public boolean salvarUser(Usuario usuario){
 		int index = 1;
-		String sql = "insert into usuario (cpf, nome, telefone, email, login, senha, fk_cargo)"
+		String sql = "insert into usuario (cpf, nome, telefone, email, login, senha, fk_nome_cargo)"
 				+ "values(?,?,?,?,?,?,?)";
 		
 		PreparedStatement statement;
@@ -30,7 +30,7 @@ public class UserDAO {
 			statement.setString(index++, usuario.getEmail());
 			statement.setString(index++, usuario.getUserName());
 			statement.setString(index++, usuario.getPassword());
-			statement.setInt(index++, 1);
+			statement.setString(index++, usuario.getCargo());
 			statement.execute();
 			return true;
 		}catch(SQLException e){

@@ -68,7 +68,7 @@ public class AddUserController {
 			usuario.setTelefone(frame.getCampoTelefone().getText());
 			usuario.setUserName(frame.getCampoUser().getText());
 			usuario.setPassword(frame.getCampoSenha().getText());
-			System.out.println(frame.getCampoCargo());
+			usuario.setCargo(frame.getCampoCargo());
 			endereco.setRua(frame.getCampoRua().getText());
 			endereco.setNumero(frame.getCampoNumero().getText());
 			endereco.setBairro(frame.getCampoBairro().getText());
