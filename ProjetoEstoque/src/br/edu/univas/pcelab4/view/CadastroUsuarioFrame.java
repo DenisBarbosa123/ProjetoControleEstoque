@@ -313,6 +313,7 @@ public class CadastroUsuarioFrame extends JFrame{
 	}
 	
 	public void atualizaCargoLista(ArrayList<Cargo> cargos){
+		listaDeCargos.removeAllItems();
 		for (Cargo cargo : cargos) {
 			listaDeCargos.addItem(cargo.getNome());
 		}
