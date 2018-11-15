@@ -7,12 +7,14 @@ import br.edu.univas.pcela4.listener.exibirTelaCadastroCargo;
 import br.edu.univas.pcelab4.dao.CargoDAO;
 import br.edu.univas.pcelab4.model.Cargo;
 import br.edu.univas.pcelab4.view.CadastroCargoFrame;
+import br.edu.univas.pcelab4.view.CadastroUsuarioFrame;
 
 public class AddCargoController {
 	CadastroCargoFrame frame;
 	CargoDAO dao;
 	Cargo cargo;
 	exibirTelaCadastroCargo listener;
+	CadastroUsuarioFrame frameUsuario;
 	
 	public AddCargoController() throws SQLException {
 		frame = new CadastroCargoFrame();
@@ -22,6 +24,7 @@ public class AddCargoController {
 			@Override
 			public void salvarCargo() {
 				CadastraCargo();
+				
 				
 			}
 

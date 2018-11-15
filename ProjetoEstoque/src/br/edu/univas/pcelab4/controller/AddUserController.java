@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
+import br.edu.univas.pcelab4.dao.CargoDAO;
 import br.edu.univas.pcelab4.dao.UserDAO;
+import br.edu.univas.pcelab4.model.Cargo;
 import br.edu.univas.pcelab4.model.Endereco;
 import br.edu.univas.pcelab4.model.Usuario;
 import br.edu.univas.pcelab4.view.CadastroUsuarioFrame;
@@ -18,9 +20,11 @@ public class AddUserController {
 	private Usuario usuario;
 	private Endereco endereco;
 	private CadastroUsuarioFrame frame;
+	private CargoDAO daoCargo;
 	
 	public AddUserController() throws SQLException{
 		dao = new UserDAO();
+		daoCargo = new CargoDAO();
 		frame = new CadastroUsuarioFrame();
 		frame.setListener(new CadastraUsuarioListener() {
 			
@@ -39,6 +43,7 @@ public class AddUserController {
 	
 	public void abrirTelaCadastroUsuario(){
 		frame.setVisible(true);
+		frame.atualizaCargoLista(daoCargo.getAllCargos());
 	}
 	public void fecharTelaUsuario(){
 		frame.setVisible(false);
@@ -53,17 +58,17 @@ public class AddUserController {
 					&& frame.getCampoCep().getText().length()==0){
 			
 			JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO - CAMPO NULO", "Erro", JOptionPane.ERROR_MESSAGE);
-			clearFields();
 			
 			
 		}else{
+			
 			usuario.setCpf(frame.getCampoCpf().getText());
 			usuario.setNome(frame.getCampoNome().getText());
 			usuario.setEmail(frame.getCampoEmail().getText());
 			usuario.setTelefone(frame.getCampoTelefone().getText());
 			usuario.setUserName(frame.getCampoUser().getText());
 			usuario.setPassword(frame.getCampoSenha().getText());
-			//usuario.setCargo(frame.getListaDeCargos());
+			System.out.println(frame.getCampoCargo());
 			endereco.setRua(frame.getCampoRua().getText());
 			endereco.setNumero(frame.getCampoNumero().getText());
 			endereco.setBairro(frame.getCampoBairro().getText());

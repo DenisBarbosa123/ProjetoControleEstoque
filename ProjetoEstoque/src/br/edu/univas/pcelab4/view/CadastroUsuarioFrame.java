@@ -1,10 +1,12 @@
 package br.edu.univas.pcelab4.view;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -19,6 +21,7 @@ import javax.swing.JTextField;
 
 import br.edu.univas.pcela4.listener.CadastraUsuarioListener;
 import br.edu.univas.pcelab4.controller.AddUserController;
+import br.edu.univas.pcelab4.model.Cargo;
 
 
 public class CadastroUsuarioFrame extends JFrame{
@@ -170,20 +173,18 @@ public class CadastroUsuarioFrame extends JFrame{
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		this.add(campoCep,gbc);
 		
-//		JLabel cargoLabel = new JLabel();
-//		cargoLabel.setText("Cargo:");
-//		gbc.gridx = 0;
-//		gbc.gridy = 9;
-//		gbc.weightx = 0.0;
-//		this.add(cargoLabel,gbc);
-//		
-//		listaDeCargos = new JComboBox<>();
-//		listaDeCargos.addItem("Test1");
-//		listaDeCargos.addItem("Test2");
-//		listaDeCargos.setPreferredSize(new Dimension(400, 40));
-//		gbc.gridx = 1;
-//		gbc.weightx = 1.0;
-//		this.add(listaDeCargos, gbc);
+		JLabel cargoLabel = new JLabel();
+		cargoLabel.setText("Cargo:");
+		gbc.gridx = 0;
+		gbc.gridy = 9;
+		gbc.weightx = 0.0;
+		this.add(cargoLabel,gbc);
+		
+		listaDeCargos = new JComboBox<>();
+		listaDeCargos.setPreferredSize(new Dimension(100, 40));
+		gbc.gridx = 1;
+		gbc.weightx = 1.0;
+		this.add(listaDeCargos, gbc);
 		
 		JLabel userNameLabel = new JLabel();
 		userNameLabel.setText("Login:");
@@ -311,22 +312,20 @@ public class CadastroUsuarioFrame extends JFrame{
 		this.campoCep = campoCep;
 	}
 	
-	public void adicionarCargoLista(Vector vector){
-		//implementar
+	public void atualizaCargoLista(ArrayList<Cargo> cargos){
+		for (Cargo cargo : cargos) {
+			listaDeCargos.addItem(cargo.getNome());
+		}
+		
 	}
 
-//	public void telaErro() {
-//		
-//		
-//	}
+	public String getCampoCargo() {
+		String cargo = listaDeCargos.getSelectedItem()+"";
+		return cargo;
+	}
 
-//	public String getListaDeCargos() {
-//		String cargo = listaDeCargos.getSelectedItem()+"";
-//		return cargo;
-//	}
-//
-//	public void setListaDeCargos(JComboBox<String> listaDeCargos) {
-//		this.listaDeCargos = listaDeCargos;
+//	public void setListaDeCargos(String cargo) {
+//		this.listaDeCargos = cargo;
 //	}
 	
 }
