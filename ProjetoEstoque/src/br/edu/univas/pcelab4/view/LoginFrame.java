@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,11 +17,28 @@ import javax.swing.JTextField;
 
 import br.edu.univas.pcela4.listener.UsuarioLoginListener;
 
+
 public class LoginFrame extends JFrame {
 
 	UsuarioLoginListener ListenerLogin;
 	private JTextField JtfUser;
 	private JTextField JtfPassword;
+	
+	public JTextField getJtfUser() {
+		return JtfUser;
+	}
+
+	public void setJtfUser(JTextField jtfUser) {
+		JtfUser = jtfUser;
+	}
+
+	public JTextField getJtfPassword() {
+		return JtfPassword;
+	}
+
+	public void setJtfPassword(JTextField jtfPassword) {
+		JtfPassword = jtfPassword;
+	}
 	
 	public LoginFrame() {
 		this.setTitle("D.A - Controle de Estoque");
@@ -102,10 +120,14 @@ public class LoginFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ListenerLogin.LogarSistema();
-				
 			}
+
+			
 		});
 		
 		this.add(panel);
 	}
+	
+	
+	
 }
