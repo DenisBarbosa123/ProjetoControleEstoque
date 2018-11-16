@@ -85,12 +85,14 @@ public class LoginController {
 		jTextField.setText(null);
 	}
 
-	public void AbrirTelaLogin(){
+	public void abrirTelaLogin(){
 		frameLogin.setVisible(true);
 	}
 	
 	public void fecharTelaLogin() {
 		frameLogin.setVisible(false);
 	}
+
+
 	
 }

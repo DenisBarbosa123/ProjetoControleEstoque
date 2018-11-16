@@ -13,7 +13,7 @@ public class Runner {
 		MainController controller;
 		try {
 			controller = new MainController();
-			controller.abrirTelaAdm();
+			controller.initApp();;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
