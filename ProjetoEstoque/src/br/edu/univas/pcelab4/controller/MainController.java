@@ -16,7 +16,7 @@ public class MainController {
 	//AddUserController addUserController;
 	//AddCargoController addCargoController;
 	//AdministradorFrame admFrame;
-	exibirTelaCadastroUsuarioListener listener;
+	//exibirTelaCadastroUsuarioListener listener;
 	TelaInicialFrame telaInicialFrame;
 	LoginController loginController;
 	

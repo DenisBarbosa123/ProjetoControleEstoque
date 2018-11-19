@@ -44,6 +44,7 @@ public class LoginDAO {
 				usermodel.setUserName(resultSet.getString("login"));
 				usermodel.setPassword(resultSet.getString("senha"));
 				usermodel.setCargo(resultSet.getString("fk_nome_cargo"));
+				System.out.println(resultSet.getString("fk_nome_cargo"));
 				user.add(usermodel);
 			}
 			

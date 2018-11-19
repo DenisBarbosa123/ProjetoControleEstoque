@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import br.edu.univas.pcelab4.view.AdministradorFrame;
 import br.edu.univas.pcelab4.view.LoginFrame;
 import br.edu.univas.pcela4.listener.UsuarioLoginListener;
 import br.edu.univas.pcelab4.dao.LoginDAO;
@@ -17,9 +19,13 @@ public class LoginController {
 
 	LoginFrame frameLogin;
 	LoginDAO usuarioDAO;
+	AdministradorController admController;
+	EstoquistaController estoquistaController;
 	//TelaIncialFrame frameinicio = new TelaIncialFrame();
 	
-	public LoginController() {
+	public LoginController() throws SQLException {
+		admController= new AdministradorController();
+		estoquistaController = new EstoquistaController();
 		try {
 			usuarioDAO = new LoginDAO();
 		} catch (SQLException e) {
@@ -51,7 +57,7 @@ public class LoginController {
 		usuario.setUserName(frameLogin.getJtfUser().getText());
 		usuario.setPassword(frameLogin.getJtfPassword().getText());
 		
-		userModel = usuarioDAO.FazerLogin(usuario);
+		userModel.addAll(usuarioDAO.FazerLogin(usuario)); 
 		validaUsuário(userModel);
 	}
 	
@@ -64,7 +70,12 @@ public class LoginController {
 		else{
 			JOptionPane.showMessageDialog(null, "Usuário encontrado com sucesso");
 			clearFields();
-			JOptionPane.showMessageDialog(null, user.get(0).getCargo());
+			frameLogin.setVisible(false);
+			String cargoUsuario = user.get(0).getCargo();
+			
+			abrirTelaCorrespondente(cargoUsuario);
+			
+			//JOptionPane.showMessageDialog(null, user.get(0).getCargo());
 			//frameinicio.setVisible(true);
 		}
 	}
@@ -92,7 +103,14 @@ public class LoginController {
 	public void fecharTelaLogin() {
 		frameLogin.setVisible(false);
 	}
-
+	
+	public void abrirTelaCorrespondente(String cargo){
+		if(cargo.equals("Estoquista")){
+			estoquistaController.abrirTelaEstoquista();
+		}else if(cargo.equals("Administrador")){
+			admController.abrirTelaAdm();
+		}
+	}
 
 	
 }

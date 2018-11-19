@@ -3,14 +3,15 @@ package br.edu.univas.pcelab4.controller;
 import br.edu.univas.pcelab4.view.EstoquistaFrame;
 
 public class EstoquistaController {
-	EstoquistaFrame frame;
+	EstoquistaFrame estoquistaFrame;
 	
 	public EstoquistaController(){
+		estoquistaFrame = new EstoquistaFrame();
 	}
 	
 	public void abrirTelaEstoquista(){
-		frame = new EstoquistaFrame();
-		frame.setVisible(true);
+	
+		estoquistaFrame.setVisible(true);
 	}
 	
 	public void abrirTelaCadastroProduto(){
