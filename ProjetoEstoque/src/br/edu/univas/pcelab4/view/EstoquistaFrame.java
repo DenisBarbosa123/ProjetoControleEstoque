@@ -11,13 +11,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import br.edu.univas.pcela4.listener.ProdutoListener;
+import br.edu.univas.pcela4.listener.EstoquistaListener;
 
 public class EstoquistaFrame extends JFrame{
 	
-	ProdutoListener listener;
+	EstoquistaListener listener;
 	
-	public void setListener(ProdutoListener listener){
+	public void setListener(EstoquistaListener listener){
 		this.listener = listener;
 	}
 
@@ -47,7 +47,7 @@ public class EstoquistaFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				listener.cadastrarProduto();
+				listener.exibeTelaCadastroProduto();;
 				
 			}
 		});
@@ -65,7 +65,7 @@ public class EstoquistaFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				listener.saidaProduto();
+				listener.exibeTelaSaidaProduto();
 			}
 		});
 		gbc.gridx = 0;
@@ -82,7 +82,7 @@ public class EstoquistaFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				listener.cadastrarProduto();
+				listener.exibeTelaEntradaProduto();
 				
 			}
 		});

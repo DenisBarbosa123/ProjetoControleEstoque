@@ -76,7 +76,7 @@ public class AddUserController {
 			
 			boolean retornoMetodocadastro= dao.salvarUser(usuario);
 			if(retornoMetodocadastro == true){
-				System.out.println(frame.getCampoNome().getText());
+				//System.out.println(frame.getCampoNome().getText());
 				JOptionPane.showMessageDialog(null,"CADASTRO FEITO COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
 			}else{
 				//this.abrirTelaCadastroUsuario();
