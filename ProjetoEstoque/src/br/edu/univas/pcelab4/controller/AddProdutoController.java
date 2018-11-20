@@ -1,6 +1,11 @@
 package br.edu.univas.pcelab4.controller;
 
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import br.edu.univas.pcela4.listener.CadastraProdutoListener;
 import br.edu.univas.pcelab4.dao.ProdutoDAO;
@@ -13,7 +18,13 @@ public class AddProdutoController {
 	ProdutoDAO daoProduto;
 	public AddProdutoController() {
 		addProdutoFrame = new CadastroProdutoFrame();
-		daoProduto = new ProdutoDAO();
+		try {
+			daoProduto = new ProdutoDAO();
+		} catch (SQLException e) {
+
+			System.out.println("problemas com classe DAO PRODUTO");
+			e.printStackTrace();
+		}
 		
 		addProdutoFrame.setListener(new CadastraProdutoListener() {
 
@@ -52,11 +63,27 @@ public class AddProdutoController {
 			produto.setValor(Double.parseDouble(addProdutoFrame.getCampoValor().getText()));
 			if(daoProduto.salvar(produto)==true){
 				JOptionPane.showMessageDialog(null,"CADASTRO FEITO COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
+				clearFields();
 			}else{
 				JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		
 		
+	}
+	private void clearFields() {
+		List<JTextField> fields = Arrays.asList(
+				addProdutoFrame.getCampoNome(),
+				addProdutoFrame.getCampoQtdeMinima(),
+				addProdutoFrame.getCampoValor());
+		
+		for(JTextField jTextField:fields){
+			clearField(jTextField);
+		}
+		
+	}
+	
+	private void clearField(JTextField textField){
+		textField.setText(null);
 	}
 }	

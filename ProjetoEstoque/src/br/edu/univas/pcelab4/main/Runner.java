@@ -9,8 +9,8 @@ import br.edu.univas.pcelab4.controller.MainController;
 public class Runner {
 
 	public static void main(String[] args) {
-		AddProdutoController controller = new AddProdutoController();
-		controller.abrirTelaCadastroProduto();
+		EstoquistaController controller = new EstoquistaController();
+		controller.abrirTelaEstoquista();
 //		MainController controller;
 //		try {
 //			controller = new MainController();
