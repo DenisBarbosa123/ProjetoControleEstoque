@@ -3,8 +3,6 @@ package br.edu.univas.pcelab4.controller;
 import java.sql.SQLException;
 
 import br.edu.univas.pcela4.listener.TelaPrincipalListener;
-import br.edu.univas.pcela4.listener.exibirTelaCadastroCargo;
-import br.edu.univas.pcela4.listener.exibirTelaCadastroUsuarioListener;
 import br.edu.univas.pcelab4.model.Usuario;
 import br.edu.univas.pcelab4.view.AdministradorFrame;
 import br.edu.univas.pcelab4.view.CadastroCargoFrame;

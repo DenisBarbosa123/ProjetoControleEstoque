@@ -9,23 +9,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import br.edu.univas.pcela4.listener.exibirTelaCadastroCargo;
-import br.edu.univas.pcela4.listener.exibirTelaCadastroUsuarioListener;
+import br.edu.univas.pcela4.listener.AdministradorListener;
 
 
 public class AdministradorFrame extends JFrame{
+	AdministradorListener listener;
 	
-	exibirTelaCadastroUsuarioListener listener;
-	exibirTelaCadastroCargo listenerCargo;
+//	exibirTelaCadastroUsuarioListener listener;
+//	exibirTelaCadastroCargo listenerCargo;
 	
-	public void setListener(exibirTelaCadastroUsuarioListener listener){
+	public void setListener(AdministradorListener listener){
 		this.listener=listener;
 	}
 	
-	public void setListenerCargo(exibirTelaCadastroCargo listener){
-		this.listenerCargo = listener;
-	}
-		
 	
 	
 	public AdministradorFrame(){
@@ -63,7 +59,7 @@ public class AdministradorFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				listenerCargo.abreTelaCadastroCargo();
+				listener.abreTelaCadastroCargo();
 				
 			}
 		});

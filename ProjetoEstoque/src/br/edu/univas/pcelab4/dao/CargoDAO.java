@@ -16,7 +16,7 @@ public class CargoDAO {
 		connection = ConnectionUtil.getConnection();
 	}
 	
-	public void salvarCargo(Cargo cargo){
+	public boolean salvarCargo(Cargo cargo){
 		int index = 1;
 		String sql = "insert into cargo (nome) values (?)";
 		
@@ -26,8 +26,10 @@ public class CargoDAO {
 			statement = connection.prepareStatement(sql);
 			statement.setString(index++, cargo.getNome());
 			statement.execute();
+			return true;
 		}catch(SQLException e){
 			e.printStackTrace();
+			return false;
 		}
 	}
 	

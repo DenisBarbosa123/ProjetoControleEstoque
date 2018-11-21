@@ -104,7 +104,7 @@ public class LoginController {
 		frameLogin.setVisible(false);
 	}
 	
-	public void abrirTelaCorrespondente(String cargo){
+	private void abrirTelaCorrespondente(String cargo){
 		if(cargo.equals("Estoquista")){
 			estoquistaController.abrirTelaEstoquista();
 		}else if(cargo.equals("Administrador")){

@@ -1,5 +1,6 @@
 package br.edu.univas.pcela4.listener;
 
-public interface exibirTelaCadastroUsuarioListener {
+public interface AdministradorListener {
+	void abreTelaCadastroCargo();
 	void abreTelaCadastroUsuario();
 }
