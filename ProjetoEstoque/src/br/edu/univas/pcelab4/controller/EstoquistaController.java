@@ -32,7 +32,6 @@ public class EstoquistaController {
 	}
 	
 	public void abrirTelaEstoquista(){
-	
 		estoquistaFrame.setVisible(true);
 	}
 	
