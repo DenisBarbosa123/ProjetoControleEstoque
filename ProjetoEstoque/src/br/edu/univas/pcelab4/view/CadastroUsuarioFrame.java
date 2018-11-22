@@ -26,8 +26,7 @@ import br.edu.univas.pcelab4.model.Cargo;
 
 public class CadastroUsuarioFrame extends JFrame{
 	private CadastraUsuarioListener listener;
-	
-	
+
 	 JTextField campoCpf;
 	 JTextField campoNome;
 	 JTextField campoEmail;

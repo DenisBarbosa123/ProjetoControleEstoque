@@ -6,10 +6,12 @@ import br.edu.univas.pcelab4.view.EstoquistaFrame;
 public class EstoquistaController {
 	EstoquistaFrame estoquistaFrame;
 	AddProdutoController addProdutoController;
+	EntradaController entradaController;
 	
 	public EstoquistaController(){
 		estoquistaFrame = new EstoquistaFrame();
 		addProdutoController = new AddProdutoController();
+		entradaController = new EntradaController();
 		estoquistaFrame.setListener(new EstoquistaListener() {
 			
 			@Override
@@ -19,7 +21,7 @@ public class EstoquistaController {
 			
 			@Override
 			public void exibeTelaEntradaProduto() {
-				// TODO Auto-generated method stub
+				entradaController.abrirTelaEntrada();
 				
 			}
 			
