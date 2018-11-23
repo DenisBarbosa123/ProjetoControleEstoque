@@ -16,11 +16,10 @@ public class EntradaController {
 	EntradaFrame entradaFrame;
 	ProdutoDAO daoProduto;
 	EntradaDAO daoEntrada;
-	Usuario user;
+	int codigoEntrada;
 	
 	public EntradaController() {
 		entradaFrame = new EntradaFrame();
-		user = new Usuario();
 		try {
 			daoProduto = new ProdutoDAO();
 			daoEntrada = new EntradaDAO();
@@ -57,21 +56,20 @@ public class EntradaController {
 	
 	public void registrarEntrada(){
 		if(entradaFrame.getOrigem().getText().length()==0 || entradaFrame.getLocalArquivoNF().getText().length()==0){
-			JOptionPane.showMessageDialog(null,"CAMPO NULO", "Confirmação", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null,"CAMPO NULO", "Alerta", JOptionPane.WARNING_MESSAGE);
 		}
+		
 		Entrada entrada = new Entrada();
 		entrada.setDataEntrada(entradaFrame.getPegaDataAtual());
 		entrada.setOrigemEntrada(entradaFrame.getOrigem().getText());
-		if(daoEntrada.salvarEntrada(entrada)){
-			JOptionPane.showMessageDialog(null,"ENTRADA FEITA COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
-		}else{
-			JOptionPane.showMessageDialog(null,"ENTRADA ABORTADA", "Confirmação", JOptionPane.ERROR_MESSAGE);
+		
+		codigoEntrada=daoEntrada.salvarEntrada(entrada);
+		if (codigoEntrada!=0) {
+			JOptionPane.showMessageDialog(null,"CADASTRO FEITO COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
+		} else {
+			JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
-//		String produtoEntrada = entradaFrame.getProdutoSelecionado();
-//		
-//		
-		
-		
+	
 	}
 	
 	public void updateProduto(){
@@ -85,9 +83,12 @@ public class EntradaController {
 		qtde+=qtdeEntrada;
 		
 		int codigoProduto = produto.getCodigoProduto();
+		String codigoUsuario=LoginController.getCpfAtual();
 		
-		daoProduto.updateTabelaProduto(qtde, caminhoNF,codigoProduto);
-		System.out.println(user.getCpf());
+		daoProduto.updateTabelaProduto(qtde,codigoProduto);
+		daoEntrada.salvarExecucaoEntrada(codigoProduto,codigoEntrada,codigoUsuario);
+		daoProduto.salvarNF(caminhoNF, codigoProduto);
+		
 			
 		
 	}

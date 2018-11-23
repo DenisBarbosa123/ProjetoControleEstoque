@@ -17,12 +17,11 @@ import br.edu.univas.pcelab4.model.Usuario;
 
 public class LoginController {
 
+	private static String idUsuarioAtual;
 	LoginFrame frameLogin;
 	LoginDAO usuarioDAO;
 	AdministradorController admController;
 	EstoquistaController estoquistaController;
-	String idUsuarioAtual;
-	//TelaIncialFrame frameinicio = new TelaIncialFrame();
 	
 	public LoginController() throws SQLException {
 		admController= new AdministradorController();
@@ -58,9 +57,9 @@ public class LoginController {
 		usuario.setUserName(frameLogin.getJtfUser().getText());
 		usuario.setPassword(frameLogin.getJtfPassword().getText());
 		
-		idUsuarioAtual = usuario.getCpf();
 		
 		userModel.addAll(usuarioDAO.FazerLogin(usuario)); 
+		idUsuarioAtual=userModel.get(0).getCpf();
 		validaUsuário(userModel);
 	}
 	
@@ -114,10 +113,8 @@ public class LoginController {
 			admController.abrirTelaAdm();
 		}
 	}
-	
-	public String getCpfAtual(){
+
+	public static String getCpfAtual(){
 		return idUsuarioAtual;
 	}
-
-	
 }

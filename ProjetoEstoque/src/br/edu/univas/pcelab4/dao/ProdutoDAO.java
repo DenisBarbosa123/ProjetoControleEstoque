@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import br.edu.univas.pcelab4.model.Produto;
 
@@ -65,10 +66,8 @@ public class ProdutoDAO {
 	}
 	
 	public Produto getProdutoByNome(String nome){
-		System.out.println(nome);
 		Produto produto = new Produto();
 		String sql = "select codigo_produto, quantidade from produto where nome = "+ "'"+nome+"'";
-		int index = 1;
 		
 		try {
 			java.sql.Statement st = connection.createStatement();
@@ -86,16 +85,15 @@ public class ProdutoDAO {
 		return produto;
 	}
 	
-	public boolean updateTabelaProduto(int qtde, String caminhoNF, int codigoProduto){
+	public boolean updateTabelaProduto(int qtde, int codigoProduto){
 		int index = 1;
-		String sql = "update produto set quantidade = ?,  nota_fiscal = ? where codigo_produto = ?";
+		String sql = "update produto set quantidade = ? where codigo_produto = ?";
 		
 		PreparedStatement st;
 		
 		try {
 			st = connection.prepareStatement(sql);
 			st.setInt(index++, qtde);
-			st.setString(index++, caminhoNF);
 			st.setInt(index++, codigoProduto);
 			st.execute();
 			return true;
@@ -106,5 +104,28 @@ public class ProdutoDAO {
 		
 		return false;
 	}
+
+
+	public void salvarNF(String caminhoNF, int codigoProduto) {
+		int index = 1;
+		String sql = "insert into notafiscal (fk_produto, caminho_nf)"+
+		 "values (?,?)";
+		
+		PreparedStatement statement;
+		
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setInt(index++, codigoProduto);
+			statement.setString(index++, caminhoNF);
+			statement.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
+
+	
 
 }
