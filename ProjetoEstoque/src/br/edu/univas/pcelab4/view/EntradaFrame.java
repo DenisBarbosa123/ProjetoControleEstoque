@@ -8,6 +8,11 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -18,11 +23,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import br.edu.univas.pcela4.listener.EntradaListener;
+import br.edu.univas.pcelab4.model.Produto;
 
 public class EntradaFrame extends JFrame{
 	EntradaListener listener;
 	JTextField qtdeEntrada;
 	JTextField localArquivoNF;
+	JTextField origem;
 	JComboBox<String> listaDeProdutos;
 	
 	
@@ -86,10 +93,25 @@ public class EntradaFrame extends JFrame{
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		painelCentral.add(qtdeEntrada, gbc);
 		
+		JLabel origemLabel = new JLabel();
+		origemLabel.setText("Origem: ");
+		gbc.gridx = 0;
+		gbc.gridy = 4;
+		gbc.weightx = 0.0;
+		painelCentral.add(origemLabel, gbc);
+		
+		origem = new JTextField();
+		gbc.gridx = 0;
+		gbc.gridy = 5;
+		gbc.weightx = 1.0;
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		painelCentral.add(origem, gbc);
+				
+		
 		JLabel localArquivo = new JLabel();
 		localArquivo.setText("Escolha a nota fiscal do produto: ");
 		gbc.gridx = 0;
-		gbc.gridy = 4;
+		gbc.gridy = 6;
 		gbc.weightx = 0.0;
 		painelCentral.add(localArquivo, gbc);
 		
@@ -99,21 +121,12 @@ public class EntradaFrame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser file = new JFileChooser();
-				file.setFileSelectionMode(JFileChooser.FILES_ONLY);
-				int i = file.showSaveDialog(null);
-				if(i==1){
-					localArquivoNF.setText("");
-				}else{
-					File arquivo = file.getSelectedFile();
-					localArquivoNF.setText(arquivo.getPath());
-					//System.out.println(localArquivoNF.getText());
-				}
+				selecionarArquivo();
 				
 			}
 		});
 		gbc.gridx = 0;
-		gbc.gridy = 5;
+		gbc.gridy = 7;
 		gbc.weightx = 0.0;
 		gbc.fill = GridBagConstraints.NONE;
 		painelCentral.add(botaoSelecionarArquivo, gbc);
@@ -129,7 +142,7 @@ public class EntradaFrame extends JFrame{
 			}
 		});
 		gbc.gridx = 0;
-		gbc.gridy = 6;
+		gbc.gridy = 8;
 		gbc.weightx = 1.0;
 		gbc.fill = GridBagConstraints.NONE;
 		//gbc.gridwidth = 2;
@@ -147,7 +160,7 @@ public class EntradaFrame extends JFrame{
 			}
 		});
 		gbc.gridx = 0;
-		gbc.gridy = 7;
+		gbc.gridy = 9;
 		gbc.fill = GridBagConstraints.NONE;
 		//gbc.gridwidth = 2;
 		//gbc.weightx = 1.0;
@@ -162,6 +175,59 @@ public class EntradaFrame extends JFrame{
 	}
 	
 	public void selecionarArquivo(){
+		JFileChooser file = new JFileChooser();
+		file.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		int i = file.showSaveDialog(null);
+		if(i==1){
+			localArquivoNF.setText("");
+		}else{
+			File arquivo = file.getSelectedFile();
+			localArquivoNF.setText(arquivo.getPath());
+			//System.out.println(localArquivoNF.getText());
+		}
+	}
+
+	public JTextField getQtdeEntrada() {
+		return qtdeEntrada;
+	}
+
+	public void setQtdeEntrada(JTextField qtdeEntrada) {
+		this.qtdeEntrada = qtdeEntrada;
+	}
+
+	public JTextField getLocalArquivoNF() {
+		return localArquivoNF;
+	}
+
+	public void setLocalArquivoNF(JTextField localArquivoNF) {
+		this.localArquivoNF = localArquivoNF;
+	}
+	
+	public String getProdutoSelecionado(){
+		String produto = listaDeProdutos.getSelectedItem()+"";
+		return produto;
+	}
+	
+	
+	public JTextField getOrigem() {
+		return origem;
+	}
+
+	public void setOrigem(JTextField origem) {
+		this.origem = origem;
+	}
+
+	public void atualizaListaProduto(ArrayList<Produto> produtos){
+		listaDeProdutos.removeAll();
+		for (Produto produto : produtos) {
+			listaDeProdutos.addItem(produto.getNome());
+		}
+		
+	}
+	
+	public Date getPegaDataAtual() {
+		Date dataAgora = new Date();
+		return dataAgora;
 		
 	}
 }

@@ -21,6 +21,7 @@ public class LoginController {
 	LoginDAO usuarioDAO;
 	AdministradorController admController;
 	EstoquistaController estoquistaController;
+	String idUsuarioAtual;
 	//TelaIncialFrame frameinicio = new TelaIncialFrame();
 	
 	public LoginController() throws SQLException {
@@ -56,6 +57,8 @@ public class LoginController {
 		
 		usuario.setUserName(frameLogin.getJtfUser().getText());
 		usuario.setPassword(frameLogin.getJtfPassword().getText());
+		
+		idUsuarioAtual = usuario.getCpf();
 		
 		userModel.addAll(usuarioDAO.FazerLogin(usuario)); 
 		validaUsuário(userModel);
@@ -110,6 +113,10 @@ public class LoginController {
 		}else if(cargo.equals("Administrador")){
 			admController.abrirTelaAdm();
 		}
+	}
+	
+	public String getCpfAtual(){
+		return idUsuarioAtual;
 	}
 
 	
