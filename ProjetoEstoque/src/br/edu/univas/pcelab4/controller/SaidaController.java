@@ -88,9 +88,10 @@ public class SaidaController {
 		if(qtde<=qtdeMinima){
 			//Email.dispararEmail();
 		}
-		
+//		System.out.print(qtde);
+//		System.out.println(qtdeMinima);
 		if(qtde>0){
-			produtoDAO.updateTabelaProduto(qtdeSaida, codigoProduto);
+			produtoDAO.updateTabelaProduto(qtde, codigoProduto);
 			saidaDAO.salvarExecucaoSaida(codigoSaida, codigoProduto, codigoUsuario);
 			System.out.println("feito update na tabela produto");
 		}else{
