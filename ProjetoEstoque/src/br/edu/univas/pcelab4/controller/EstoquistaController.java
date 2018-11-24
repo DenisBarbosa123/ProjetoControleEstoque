@@ -7,16 +7,18 @@ public class EstoquistaController {
 	EstoquistaFrame estoquistaFrame;
 	AddProdutoController addProdutoController;
 	EntradaController entradaController;
+	SaidaController saidaController;
 	
 	public EstoquistaController(){
 		estoquistaFrame = new EstoquistaFrame();
 		addProdutoController = new AddProdutoController();
 		entradaController = new EntradaController();
+		saidaController = new SaidaController();
 		estoquistaFrame.setListener(new EstoquistaListener() {
 			
 			@Override
 			public void exibeTelaSaidaProduto() {
-				
+				saidaController.abrirTelaSaida();
 			}
 			
 			@Override

@@ -39,7 +39,7 @@ public class EntradaController {
 			@Override
 			public void registraEntrada() {
 				registrarEntrada();
-				updateProduto();
+				
 				
 			}
 		});
