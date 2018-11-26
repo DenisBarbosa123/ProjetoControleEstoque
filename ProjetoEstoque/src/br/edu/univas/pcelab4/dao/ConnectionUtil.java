@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class ConnectionUtil {
 	private static final String USER = "postgres";
-	private static final String PASSWORD = "123456";
+	private static final String PASSWORD = "natsuki96";
 	
 	public static Connection getConnection() throws SQLException{
 		String url = "jdbc:postgresql://localhost/Controle_Estoque";

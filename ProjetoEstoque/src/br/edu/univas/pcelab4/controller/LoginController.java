@@ -22,10 +22,12 @@ public class LoginController {
 	LoginDAO usuarioDAO;
 	AdministradorController admController;
 	EstoquistaController estoquistaController;
+	GerenteController gerenteController;
 	
 	public LoginController() throws SQLException {
 		admController= new AdministradorController();
 		estoquistaController = new EstoquistaController();
+		gerenteController = new GerenteController();
 		try {
 			usuarioDAO = new LoginDAO();
 		} catch (SQLException e) {
@@ -77,8 +79,6 @@ public class LoginController {
 			
 			abrirTelaCorrespondente(cargoUsuario);
 			
-			//JOptionPane.showMessageDialog(null, user.get(0).getCargo());
-			//frameinicio.setVisible(true);
 		}
 	}
 
@@ -111,6 +111,8 @@ public class LoginController {
 			estoquistaController.abrirTelaEstoquista();
 		}else if(cargo.equals("Administrador")){
 			admController.abrirTelaAdm();
+		}else if(cargo.equals("Gerente")) {
+			gerenteController.abrirTelaGerente();
 		}
 	}
 

@@ -6,6 +6,8 @@ public class Entrada {
 	private int codigo_entrada;
 	private Date dataEntrada;
 	private String origemEntrada;
+	
+	
 	public int getCodigo_entrada() {
 		return codigo_entrada;
 	}
