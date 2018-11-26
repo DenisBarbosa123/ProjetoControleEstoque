@@ -2,7 +2,9 @@ package br.edu.univas.pcelab4.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -67,6 +69,19 @@ public class UserDAO {
 		ArrayList<String> listaEmailComercial = new ArrayList<>();
 		int index = 1;
 		String sql = "select email from usuario where cargo = 'Comercial'";
+		
+		PreparedStatement ps;
+		
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(sql);
+			
+			while(resultSet.next()){
+				listaEmailComercial.add(resultSet.getString("email"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		return listaEmailComercial;
 	}

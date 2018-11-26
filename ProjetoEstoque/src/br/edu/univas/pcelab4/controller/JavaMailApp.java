@@ -1,5 +1,6 @@
 package br.edu.univas.pcelab4.controller;
 
+import java.util.ArrayList;
 import java.util.Properties;
 import javax.mail.Address;
 import javax.mail.Message;
@@ -20,7 +21,7 @@ public class JavaMailApp{
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "465");
 	}
-      public void enviarEmail(String produto){
+      public void enviarEmail(String produto, ArrayList<String> listaEmailComercial){
  
             Session session = Session.getDefaultInstance(props,
                         new javax.mail.Authenticator() {
@@ -37,9 +38,8 @@ public class JavaMailApp{
  
                   Message message = new MimeMessage(session);
                   message.setFrom(new InternetAddress("seuemail@gmail.com")); //Remetente
- 
-                  Address[] toUser = InternetAddress //Destinatário(s)
-                             .parse("seuamigo@gmail.com, seucolega@hotmail.com, seuparente@yahoo.com.br");  
+                  
+                  Address[] toUser = InternetAddress.parse("");//  
  
                   message.setRecipients(Message.RecipientType.TO, toUser);
                   message.setSubject("Enviando email com JavaMail");//Assunto

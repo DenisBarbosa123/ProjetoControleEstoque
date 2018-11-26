@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import br.edu.univas.pcela4.listener.SaidaListener;
 import br.edu.univas.pcelab4.dao.ProdutoDAO;
 import br.edu.univas.pcelab4.dao.SaidaDAO;
+import br.edu.univas.pcelab4.dao.UserDAO;
 import br.edu.univas.pcelab4.model.Produto;
 import br.edu.univas.pcelab4.model.Saida;
 import br.edu.univas.pcelab4.view.SaidaFrame;
@@ -16,12 +17,14 @@ public class SaidaController {
 	ProdutoDAO produtoDAO;
 	SaidaDAO saidaDAO;
 	int codigoSaida;
+	UserDAO userDAO;
 	
 	public SaidaController() {
 		saidaFrame = new SaidaFrame();
 		try {
 			produtoDAO = new ProdutoDAO();
 			saidaDAO = new SaidaDAO();
+			userDAO = new UserDAO();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("problemas com saida de produtos");
@@ -87,7 +90,7 @@ public class SaidaController {
 		
 		if(qtde<=qtdeMinima){
 			JavaMailApp email = new JavaMailApp();
-			email.enviarEmail(produto.getNome());
+			email.enviarEmail(produto.getNome(),userDAO.getAllEmailComercial());
 		}
 //		System.out.print(qtde);
 //		System.out.println(qtdeMinima);
