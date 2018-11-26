@@ -20,7 +20,7 @@ private Connection connection;
 		int codigoEntrada = 0;
 		int index = 1;
 		String sql = "insert into entrada (data, origem )"
-				+ "values (?,?)";
+				+ "values (?,?) ";
 		
 		PreparedStatement st;
 		
