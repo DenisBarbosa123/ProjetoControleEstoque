@@ -86,7 +86,8 @@ public class SaidaController {
 		qtde-=qtdeSaida;
 		
 		if(qtde<=qtdeMinima){
-			//Email.dispararEmail();
+			JavaMailApp email = new JavaMailApp();
+			email.enviarEmail(produto.getNome());
 		}
 //		System.out.print(qtde);
 //		System.out.println(qtdeMinima);

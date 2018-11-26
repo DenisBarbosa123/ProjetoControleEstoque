@@ -3,6 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="lib/postgresql-42.2.5.jar"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="lib/itextpdf-5.5.13.jar"/>
+=======
+	<classpathentry kind="lib" path="lib_email/mail.jar"/>
+>>>>>>> 60d930c478ec31b33d687559f9e871262365bd4e
 	<classpathentry kind="output" path="bin"/>
 </classpath>

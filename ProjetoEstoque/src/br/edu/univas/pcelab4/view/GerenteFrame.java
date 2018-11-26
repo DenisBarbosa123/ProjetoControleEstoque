@@ -21,8 +21,8 @@ public class GerenteFrame extends JFrame{
 	public GerenteFrame(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(300,300);
-		this.setTitle("Tela Gerente");
-		this.setLocationRelativeTo(null);
+		this.setTitle("Tela Gerentse");
+		this.setLocationRelatsiveTo(null);
 		addComponents();
 	}
 

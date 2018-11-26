@@ -3,6 +3,8 @@ package br.edu.univas.pcelab4.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
 
 import br.edu.univas.pcelab4.model.Endereco;
 import br.edu.univas.pcelab4.model.Usuario;
@@ -59,5 +61,13 @@ public class UserDAO {
 			System.out.println("Problemas para popular tabela endereco");
 			e.printStackTrace();
 		}
+	}
+	
+	public ArrayList<String> getAllEmailComercial(){
+		ArrayList<String> listaEmailComercial = new ArrayList<>();
+		int index = 1;
+		String sql = "select email from usuario where cargo = 'Comercial'";
+		
+		return listaEmailComercial;
 	}
 }
