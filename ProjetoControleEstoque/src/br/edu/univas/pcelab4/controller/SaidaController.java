@@ -88,19 +88,24 @@ public class SaidaController {
 		
 		qtde-=qtdeSaida;
 		
-		if(qtde<=qtdeMinima){
-			JavaMailApp email = new JavaMailApp();
-			email.enviarEmail(produto.getNome(),userDAO.getAllEmailComercial());
-		}
-//		System.out.print(qtde);
-//		System.out.println(qtdeMinima);
-		if(qtde>0){
-			produtoDAO.updateTabelaProduto(qtde, codigoProduto);
-			saidaDAO.salvarExecucaoSaida(codigoSaida, codigoProduto, codigoUsuario);
-			System.out.println("feito update na tabela produto");
-		}else{
+		if(qtde<0){
 			System.out.println("quantidade invalida");
+
+		}else{
+			if(qtde<=qtdeMinima){
+				JavaMailApp email = new JavaMailApp();
+				email.enviarEmail(Integer.toString(qtde),produto.getNome(),userDAO.getAllEmailComercial());
+				produtoDAO.updateTabelaProduto(qtde, codigoProduto);
+				saidaDAO.salvarExecucaoSaida(codigoSaida, codigoProduto, codigoUsuario);
+				System.out.println("feito update na tabela produto e enviado email");
+			}else{
+				produtoDAO.updateTabelaProduto(qtde, codigoProduto);
+				saidaDAO.salvarExecucaoSaida(codigoSaida, codigoProduto, codigoUsuario);
+				System.out.println("feito update na tabela produto");
+			}
 		}
 		
+//		System.out.print(qtde);
+//		System.out.println(qtdeMinima);
 	}
 }

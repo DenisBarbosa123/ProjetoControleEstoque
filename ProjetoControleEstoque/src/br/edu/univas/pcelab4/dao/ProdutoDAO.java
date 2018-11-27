@@ -67,13 +67,14 @@ public class ProdutoDAO {
 	
 	public Produto getProdutoByNome(String nome){
 		Produto produto = new Produto();
-		String sql = "select codigo_produto, quantidade, estoque_minimo from produto where nome = "+ "'"+nome+"'";
+		String sql = "select codigo_produto, nome, quantidade, estoque_minimo from produto where nome = "+ "'"+nome+"'";
 		
 		try {
 			java.sql.Statement st = connection.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 			while(rs.next()){
 				produto.setCodigoProduto(rs.getInt("codigo_produto"));
+				produto.setNome(rs.getString("nome"));
 				produto.setQtde(rs.getInt("quantidade"));
 				produto.setQtdeMinima(rs.getInt("estoque_minimo"));
 			}

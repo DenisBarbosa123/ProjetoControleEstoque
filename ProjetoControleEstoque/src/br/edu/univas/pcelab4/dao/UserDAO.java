@@ -68,7 +68,7 @@ public class UserDAO {
 	public ArrayList<String> getAllEmailComercial(){
 		ArrayList<String> listaEmailComercial = new ArrayList<>();
 		int index = 1;
-		String sql = "select email from usuario where cargo = 'Comercial'";
+		String sql = "select email from usuario where fk_nome_cargo = 'Comercial'";
 		
 		PreparedStatement ps;
 		
