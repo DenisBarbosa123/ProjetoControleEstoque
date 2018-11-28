@@ -45,7 +45,7 @@ public class TelaRelatorioEntradaFrame extends JFrame{
 		gbc.insets = new Insets(5, 5, 20, 5);
 			
 		JLabel lblTitulo = new JLabel();
-		lblTitulo.setText("Relatório de entrada");
+		lblTitulo.setText("Relatório de Produtos");
 		gbc.gridy =0;
 		gbc.gridy =0;
 		gbc.anchor = GridBagConstraints.CENTER;
@@ -67,7 +67,7 @@ public class TelaRelatorioEntradaFrame extends JFrame{
 		gbc.gridy = 1;
 		this.add(jspRelatorio, gbc);
 		
-		JButton btnGerarRelatorio = new JButton("Gerar relatorio");
+		JButton btnGerarRelatorio = new JButton("Gerar PDF");
 		gbc.gridy = 2;
 		
 		btnGerarRelatorio.addActionListener(new ActionListener() {
@@ -83,7 +83,7 @@ public class TelaRelatorioEntradaFrame extends JFrame{
 		this.add(btnGerarRelatorio, gbc);
 	}
 
-	public void updateStudents(ArrayList<Produto> produtoRelatorio) {
+	public void updateProdutos(ArrayList<Produto> produtoRelatorio) {
 		DefaultTableModel model = (DefaultTableModel) tblRelatorio.getModel();
 		
 		model.setRowCount(0);
@@ -97,6 +97,6 @@ public class TelaRelatorioEntradaFrame extends JFrame{
 					produto.getQtde(),
 			});
 		}
-}
+	}
 	
 }

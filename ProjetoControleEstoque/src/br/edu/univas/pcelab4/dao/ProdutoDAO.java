@@ -124,6 +124,36 @@ public class ProdutoDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public ArrayList<Produto> getAllRelatorioProduto() {
+		ArrayList<Produto> dataEntrada = new ArrayList<>();
+		
+		String sql = "select * from produto";
+		
+		 //statement;
+		
+		try {
+			java.sql.Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(sql);
+			
+			while(resultSet.next()) {
+				Produto produto = new Produto();
+				produto.setCodigoProduto(resultSet.getInt("codigo_produto"));
+				produto.setNome(resultSet.getString("nome"));
+				produto.setValor(resultSet.getDouble("valor"));
+				produto.setQtdeMinima(resultSet.getInt("estoque_minimo"));
+				produto.setQtde(resultSet.getInt("quantidade"));
+				dataEntrada.add(produto);
+				}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return dataEntrada;
+		
+	}
 
 
 

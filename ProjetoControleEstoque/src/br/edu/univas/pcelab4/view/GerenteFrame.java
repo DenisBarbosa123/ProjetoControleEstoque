@@ -40,10 +40,10 @@ public class GerenteFrame extends JFrame{
 		gbc.anchor = GridBagConstraints.CENTER;
 		this.add(lblTitulo,gbc);
 		
-		JButton btnRelatorioEntrada = new JButton("Entrada");
+		JButton btnRelatorioProduto = new JButton("Produtos");
 		gbc.gridy = 1;
 		
-		btnRelatorioEntrada.addActionListener(new ActionListener() {
+		btnRelatorioProduto.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -52,13 +52,21 @@ public class GerenteFrame extends JFrame{
 			}
 		});
 		
-		this.add(btnRelatorioEntrada, gbc);
+		this.add(btnRelatorioProduto, gbc);
 		
 		
 		
-		JButton btnRelatorioSaida = new JButton("Saida");
+		JButton btnRelatorioUsuario = new JButton("Usuario");
 		gbc.gridy = 2;
-		this.add(btnRelatorioSaida, gbc);
+		btnRelatorioUsuario.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gerenteListener.ShowPageTelaUsuarioRelatorio();
+				
+			}
+		});
+		this.add(btnRelatorioUsuario, gbc);
 			
 	}
 	

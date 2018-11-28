@@ -85,4 +85,31 @@ public class UserDAO {
 		
 		return listaEmailComercial;
 	}
+	
+	public ArrayList<Usuario> getAllUsuarios(){
+		ArrayList<Usuario> usuarios = new ArrayList<>();
+		
+		String sql = "select cpf, nome, fk_nome_cargo, email, telefone from usuario";
+		
+		Statement statement;
+		
+		try {
+			statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(sql);
+			
+			while(resultSet.next()) {
+				Usuario user = new Usuario();
+				user.setCpf(resultSet.getString("cpf"));
+				user.setNome(resultSet.getString("nome"));
+				user.setCargo(resultSet.getString("fk_nome_cargo"));
+				user.setEmail(resultSet.getString("email"));
+				user.setTelefone(resultSet.getString("telefone"));
+				usuarios.add(user);
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		
+		return usuarios;
+	}
 }
