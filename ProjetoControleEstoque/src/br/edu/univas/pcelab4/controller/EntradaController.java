@@ -82,7 +82,13 @@ public class EntradaController {
 		produto = daoProduto.getProdutoByNome(entradaFrame.getProdutoSelecionado());
 		
 		int qtde = produto.getQtde();
-		int qtdeEntrada = Integer.parseInt(entradaFrame.getQtdeEntrada().getText());
+		int qtdeEntrada = 0;
+		
+		try {
+			qtdeEntrada = Integer.parseInt(entradaFrame.getQtdeEntrada().getText());
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(entradaFrame, this, "Campo Quantidade saida só aceita números!",JOptionPane.INFORMATION_MESSAGE, null);		}
+		
 		qtde+=qtdeEntrada;
 		
 		int codigoProduto = produto.getCodigoProduto();

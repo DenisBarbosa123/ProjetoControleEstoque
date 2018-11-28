@@ -85,7 +85,14 @@ public class SaidaController {
 		
 		int qtde = produto.getQtde();
 		int qtdeMinima = produto.getQtdeMinima();
-		int qtdeSaida = Integer.parseInt(saidaFrame.getQtdeSaida().getText());
+		int qtdeSaida=0;
+		
+		try {
+			qtdeSaida = Integer.parseInt(saidaFrame.getQtdeSaida().getText());
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(saidaFrame, this, "Campo Quantidade saida só aceita números!",JOptionPane.INFORMATION_MESSAGE, null);
+		}
+		
 		int codigoProduto = produto.getCodigoProduto();
 		String codigoUsuario=LoginController.getCpfAtual();
 		
