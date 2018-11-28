@@ -59,7 +59,12 @@ public class AddProdutoController {
 		}else{
 			produto = new Produto();
 			produto.setNome(addProdutoFrame.getCampoNome().getText());
-			produto.setQtdeMinima(Integer.parseInt(addProdutoFrame.getCampoQtdeMinima().getText()));
+			
+			try {
+				produto.setQtdeMinima(Integer.parseInt(addProdutoFrame.getCampoQtdeMinima().getText()));
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(null,"CADASTRO ABORTADO - Campo Quantidade Minima só aceita números", "Erro", JOptionPane.ERROR_MESSAGE);
+			}
 			produto.setValor(Double.parseDouble(addProdutoFrame.getCampoValor().getText()));
 			if(daoProduto.salvar(produto)==true){
 				JOptionPane.showMessageDialog(null,"CADASTRO FEITO COM SUCESSO", "Confirmação", JOptionPane.INFORMATION_MESSAGE);

@@ -1,8 +1,11 @@
 package br.edu.univas.pcelab4.controller;
 
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import br.edu.univas.pcelab4.listener.SaidaListener;
 import br.edu.univas.pcelab4.dao.ProdutoDAO;
@@ -102,10 +105,24 @@ public class SaidaController {
 				produtoDAO.updateTabelaProduto(qtde, codigoProduto);
 				saidaDAO.salvarExecucaoSaida(codigoSaida, codigoProduto, codigoUsuario);
 				System.out.println("feito update na tabela produto");
+				clearFields();
 			}
 		}
+	}
+	
+	private void clearFields() {
+		List<JTextField> fields = Arrays.asList(
+				saidaFrame.getQtdeSaida(),
+				saidaFrame.getDestino());
+				
 		
-//		System.out.print(qtde);
-//		System.out.println(qtdeMinima);
+		for(JTextField jTextField:fields){
+			clearField(jTextField);
+		}
+		
+	}
+	
+	private void clearField(JTextField textField){
+		textField.setText(null);
 	}
 }
