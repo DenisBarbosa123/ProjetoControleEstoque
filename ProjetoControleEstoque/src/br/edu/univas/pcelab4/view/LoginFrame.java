@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import br.edu.univas.pcelab4.listener.UsuarioLoginListener;
@@ -21,7 +22,7 @@ public class LoginFrame extends JFrame {
 
 	UsuarioLoginListener ListenerLogin;
 	private JTextField JtfUser;
-	private JTextField JtfPassword;
+	private JPasswordField JtfPassword;
 	
 	public JTextField getJtfUser() {
 		return JtfUser;
@@ -31,11 +32,11 @@ public class LoginFrame extends JFrame {
 		JtfUser = jtfUser;
 	}
 
-	public JTextField getJtfPassword() {
+	public JPasswordField getJtfPassword() {
 		return JtfPassword;
 	}
 
-	public void setJtfPassword(JTextField jtfPassword) {
+	public void setJtfPassword(JPasswordField jtfPassword) {
 		JtfPassword = jtfPassword;
 	}
 	
@@ -88,7 +89,7 @@ public class LoginFrame extends JFrame {
 		gbc.anchor = GridBagConstraints.CENTER;
 		CenterPanel.add(lblPassord,gbc);
 		
-		JtfPassword = new JTextField();
+		JtfPassword = new JPasswordField();
 		JtfPassword.setPreferredSize(new Dimension(550,25));
 		gbc.gridx = 1;
 		gbc.anchor = GridBagConstraints.EAST;
